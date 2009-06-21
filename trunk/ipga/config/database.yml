@@ -1,0 +1,20 @@
+<% database_name = "ipga" %>
+
+defaults: &defaults
+  adapter: mysql
+  username: root
+  password:
+  host: localhost
+
+development:
+  database: <%= database_name %>_development
+  <<: *defaults
+
+test:
+  database: <%= database_name %>_test
+  <<: *defaults
+
+production:
+  database: <%= database_name %>_production
+  <<: *defaults
+
