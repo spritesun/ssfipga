@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+  <title>Resources: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'base' %>
+</head>
+<body>
+<div class="page">
+  <div id="header">
+    <div id="topnav">
+      <span><a href="#">Login</a> | <a href="#">Contact</a> | <a href="#">Imprint</a></span>
+    </div>
+    <h1>Infinite Positive Group</h1>
+    <span>A next generation venture incubator, think center and conglomerate company</span></div>
+  <div class="page_margins">
+    <div id="main">
+      <!-- begin: #col1 - first float column -->
+      <div id="col1">
+        <div id="col1_content" class="clearfix">
+          <h2>Our Company</h2>
+
+          <p><a href="#" title="a test link">a test link</a> Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+            Nullam malesuada suscipit pede. Nullam ipsum lacus, varius vel, nonummy in, consequat ut, neque. </p>
+
+          <h2>Our Peopel</h2>
+
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam malesuada suscipit
+            pede. Nullam ipsum lacus, varius vel, nonummy in, consequat ut, neque. Vivamus viverra.
+            Duis dolor arcu, lacinia sit amet, sollicitudin sed, aliquet vel, quam. Pellentesque
+            molestie laoreet tortor. </p>
+        </div>
+      </div>
+      <!-- end: #col1 -->
+      <!-- begin: #col2 - second float column -->
+      <div id="col2">
+        <div id="col2_content" class="clearfix">
+          <p style="color: green"><%= flash[:notice] %></p>
+          <%= yield %>
+        </div>
+      </div>
+      <!-- end: #col2 -->
+      <div id="clearing"></div>
+    </div>
+  </div>
+</div>
+<!-- end: #main -->
+<!-- begin: #footer -->
+<div id="footer">
+  <div>Copyright ? 2009 Infinite Positive Group. All rights reserved.</div>
+  <ul id="nav-legal">
+    <li>
+      <a href="/static?key=user_agreement&trk=hb_ft_userag">User Agreement</a>
+    </li>
+    <li>
+      <a href="/static?key=privacy_policy&trk=hb_ft_priv">Privacy Policy</a>
+    </li>
+    <li>
+      <a href="/static?key=copyright_policy&trk=hb_ft_copy">Copyright Policy</a>
+    </li>
+  </ul>
+  <div id="feedback-request">
+    <a href="/#">Help improve us. </a>Send us your feedback.
+  </div>
+</div>
+<!-- end: #footer -->
+</body>
+</html>
