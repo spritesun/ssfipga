@@ -3,7 +3,7 @@
 defaults: &defaults
   adapter: mysql
   username: root
-  password:
+  password: password
   host: localhost
 
 development:
