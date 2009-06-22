@@ -11,26 +11,54 @@
 <div class="page">
   <div id="header">
     <div id="topnav">
-      <span><a href="#">Login</a> | <a href="#">Contact</a> | <a href="#">About</a></span>
+      <span><a href="/account/login">Login</a> | <a href="#">Contact</a> | <a href="#">About</a></span>
     </div>
     <h1>Infinite Positive Group</h1>
-    <span>A next generation venture incubator, think center and conglomerate company</span></div>
+    <span>A next generation venture incubator, think center and conglomerate company</span>
+    <!--begin: #mainNav-->
+    <div id="mainNav">
+      <ul>
+        <li><a href="#">首页</a></li>
+        <li><a href="#">概况</a></li>
+        <li><a href="/resources">优势</a></li>
+        <li id="searchArea">
+          <form method="get" action="#">
+            <input class="searchBox" type="text" value="search here..."/>
+            <input class="searchButton" type="submit" value="search"/>
+          </form>
+        </li>
+      </ul>
+    </div>
+    <!--end: #mainNav-->
+  </div>
   <div class="page_margins">
     <div id="main">
       <!-- begin: #col1 - first float column -->
       <div id="col1">
         <div id="col1_content" class="clearfix">
-          <h2>Our Company</h2>
+          <!--being: #pofile-->
+          <div id="pofile">
+            <div id="pofileImg">
+              <img src="/images/noImgSmall.gif" alt="no img small"/>
+            </div>
+            <div id="pofileInfo">
+              <h3>Zhe Shu</h3>
 
-          <p><a href="#" title="a test link">a test link</a> Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-            Nullam malesuada suscipit pede. Nullam ipsum lacus, varius vel, nonummy in, consequat ut, neque. </p>
-
-          <h2>Our Peopel</h2>
-
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam malesuada suscipit
-            pede. Nullam ipsum lacus, varius vel, nonummy in, consequat ut, neque. Vivamus viverra.
-            Duis dolor arcu, lacinia sit amet, sollicitudin sed, aliquet vel, quam. Pellentesque
-            molestie laoreet tortor. </p>
+              <p>manager</p>
+            </div>
+            <div id="messageNav">
+              <ul>
+                <li><a href="#">Inbox(0)</a></li>
+                <li><a href="#">Some Link</a></li>
+                <li><a href="#">Some Link</a></li>
+              </ul>
+            </div>
+          </div>
+          <!--end: #pofile-->
+        </div>
+        <!--临时写法, 需要删除此段-->
+        <div style="min-height: 200px; margin-top: 10px; margin-left: 10px">
+          some ads here
         </div>
       </div>
       <!-- end: #col1 -->
@@ -49,7 +77,7 @@
 <!-- end: #main -->
 <!-- begin: #footer -->
 <div id="footer">
-  <div>Copyright ? 2009 Infinite Positive Group. All rights reserved.</div>
+  <div>Copyright &copy; 2009 Infinite Positive Group. All rights reserved.</div>
   <ul id="nav-legal">
     <li>
       <a href="#">User Agreement</a>
@@ -59,7 +87,8 @@
     </li>
     <li>
       <a href="#">Copyright Policy</a>
-    p</li>
+      p
+    </li>
   </ul>
   <div id="feedback-request">
     <a href="/#">Help improve us. </a>Send us your feedback.
