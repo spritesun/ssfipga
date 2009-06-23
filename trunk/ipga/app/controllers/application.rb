@@ -14,5 +14,6 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
   include AuthenticatedSystem
   # "remember me" functionality
-  before_filter :login_from_cookie
+  #before_filter :login_from_cookie
+  before_filter :login_required
 end
