@@ -1,3 +1,3 @@
 class Resource < ActiveRecord::Base
-  validates_presence_of :title
+  belongs_to :location
 end

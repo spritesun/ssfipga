@@ -2,13 +2,13 @@
 
 <div class="list">
   <div class="listHeader">
-    <div class="listColumnTitle">Title</div>
+    <div class="listColumnTitle">Location</div>
     <div class="listColumnDescription">Description</div>
     <div class="listColumnCreatedAt">Created at</div>
   </div>
   <% for resource in @resources %>
       <div class="listItem">
-        <div class="listColumnTitle"><a href="#"><%= h resource.title %></a></div>
+        <div class="listColumnTitle"><a href="#"><%= h resource.location.name %></a></div>
         <div class="listColumnDescription"><%= h resource.description %></div>
         <div class="listColumnCreatedAt"><%= h resource.created_at %></div>
         <div class="listTools">
