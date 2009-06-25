@@ -93,7 +93,13 @@ p {
     display: block;
 }
 
-/* header ******/
+.clearBoth {
+    clear: both;
+}
+
+/*end: css-reset*/
+/*begin: #header*/
+
 #header, #nav, #main, #footer {
     clear: both;
 }
@@ -188,7 +194,9 @@ p {
     height: 24px;
 }
 
-/* main ******/
+/*end: #header*/
+/*begin: page_margins*/
+
 .page_margins {
     background: #EEEEEE none repeat scroll 0 0;
     border-bottom: 2px solid #3399FF;
@@ -202,6 +210,8 @@ p {
     position: relative;
 }
 
+/*beging: #col1*/
+
 #col1 {
     float: left;
     width: 170px;
@@ -212,6 +222,11 @@ p {
 #col1_content {
     padding: 10px 0px;
     background: url(../images/leftRndBot.gif) no-repeat center bottom;
+}
+
+#inbox {
+    background: url(../images/leftRndMid.gif) repeat-y center top;
+    padding: 10px;
 }
 
 #pofile {
@@ -251,12 +266,16 @@ p {
 }
 
 #messageNav ul li a {
-    
+
 }
 
+/*end: #col1*/
+/*begin: #col2*/
+
 #col2 {
-    margin: 0 0 0 25%;
-    width: auto;
+    float: left;
+    width: 580px;
+    margin: 0px 10px;
 }
 
 #main {
@@ -267,11 +286,29 @@ p {
     width: 960px;
 }
 
-#clearing {
-    clear: both;
+/*end: #col2*/
+/*begin: #col3*/
+
+#col3 {
+    float: left;
+    width: 170px;
+    margin-right: 10px;
+    background: url(../images/leftRndTop.gif) no-repeat center top;
 }
 
-/* footer ******/
+#col3_content {
+    padding: 10px 0px;
+    background: url(../images/leftRndBot.gif) no-repeat center bottom;
+}
+
+#shopCart {
+    background: url(../images/leftRndMid.gif) repeat-y center top;
+    padding: 10px 10px;
+}
+
+/*end: #col3*/
+/*end: page_margins*/
+/*begin: #footer*/
 #footer {
     background: #F9F9F9 none repeat scroll 0 0;
     color: #666666;
@@ -279,6 +316,7 @@ p {
     margin: 0 auto;
     width: 100%;
     text-align: center;
+    clear: both;
 }
 
 #nav-legal {

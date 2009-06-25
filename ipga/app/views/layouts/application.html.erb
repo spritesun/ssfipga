@@ -6,6 +6,7 @@
   <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
   <title>Resources: <%= controller.action_name %></title>
   <%= stylesheet_link_tag 'base' %>
+  <%= stylesheet_link_tag 'content' %>
 </head>
 <body>
 <div class="page">
@@ -36,24 +37,31 @@
       <!-- begin: #col1 - first float column -->
       <div id="col1">
         <div id="col1_content" class="clearfix">
-          <!--being: #pofile-->
-          <div id="pofile">
-            <div id="pofileImg">
-              <img src="/images/noImgSmall.gif" alt="no img small"/>
-            </div>
-            <div id="pofileInfo">
-              <h3>Zhe Shu</h3>
-
-              <p>manager</p>
-            </div>
-            <div id="messageNav">
-              <ul>
-                <li><a href="#">Inbox(0)</a></li>
-                <li><a href="#">Some Link</a></li>
-                <li><a href="#">Some Link</a></li>
-              </ul>
-            </div>
+          <div id="inbox">
+            <p>inbox</p>
+            <ul>
+              <li>message1</li>
+              <li>message2</li>
+            </ul>
           </div>
+          <!--being: #pofile-->
+          <!--<div id="pofile">-->
+          <!--<div id="pofileImg">-->
+          <!--<img src="/images/noImgSmall.gif" alt="no img small"/>-->
+          <!--</div>-->
+          <!--<div id="pofileInfo">-->
+          <!--<h3>Zhe Shu</h3>-->
+
+          <!--<p>manager</p>-->
+          <!--</div>-->
+          <!--<div id="messageNav">-->
+          <!--<ul>-->
+          <!--<li><a href="#">Inbox(0)</a></li>-->
+          <!--<li><a href="#">Some Link</a></li>-->
+          <!--<li><a href="#">Some Link</a></li>-->
+          <!--</ul>-->
+          <!--</div>-->
+          <!--</div>-->
           <!--end: #pofile-->
         </div>
         <!--临时写法, 需要删除此段-->
@@ -65,35 +73,52 @@
       <!-- begin: #col2 - second float column -->
       <div id="col2">
         <div id="col2_content" class="clearfix">
-          <p style="color: green"><%= flash[:notice] %></p>
-          <%= yield %>
+          <div id="content">
+            <p style="color: green"><%= flash[:notice] %></p>
+            <%= yield %>
+          </div>
         </div>
       </div>
       <!-- end: #col2 -->
-      <div id="clearing"></div>
+      <!-- begin: #col3 - third float column -->
+      <div id="col3">
+        <div id="col3_content" class="clearfix">
+          <div id="shopCart">
+            <p>shopCart</p>
+            <ul>
+              <li>item1</li>
+              <li>item2</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- end: #col3 -->
+      <div class="clearBoth"></div>
+    </div>
+    <!-- end: #main -->
+  </div>
+  <!--end: #page_margins-->
+  <!-- begin: #footer -->
+  <div id="footer">
+    <div>Copyright &copy; 2009 Infinite Positive Group. All rights reserved.</div>
+    <ul id="nav-legal">
+      <li>
+        <a href="#">User Agreement</a>
+      </li>
+      <li>
+        <a href="#">Privacy Policy</a>
+      </li>
+      <li>
+        <a href="#">Copyright Policy</a>
+        p
+      </li>
+    </ul>
+    <div id="feedback-request">
+      <a href="/#">Help improve us. </a>Send us your feedback.
     </div>
   </div>
+  <!-- end: #footer -->
 </div>
-<!-- end: #main -->
-<!-- begin: #footer -->
-<div id="footer">
-  <div>Copyright &copy; 2009 Infinite Positive Group. All rights reserved.</div>
-  <ul id="nav-legal">
-    <li>
-      <a href="#">User Agreement</a>
-    </li>
-    <li>
-      <a href="#">Privacy Policy</a>
-    </li>
-    <li>
-      <a href="#">Copyright Policy</a>
-      p
-    </li>
-  </ul>
-  <div id="feedback-request">
-    <a href="/#">Help improve us. </a>Send us your feedback.
-  </div>
-</div>
-<!-- end: #footer -->
+<!--end: #page-->
 </body>
 </html>
