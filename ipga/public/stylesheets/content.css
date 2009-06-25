@@ -8,6 +8,7 @@
     font-family: Arial, sans-serif;
 }
 
+/*begin: list*/
 #content div.list {
     width: 580px;
 }
@@ -56,3 +57,21 @@
     float: right;
     margin-right: 10px;
 }
+
+/*end: list*/
+
+/*begin: search*/
+#searchBox {
+    background: url(../images/SearchBg.gif);
+    border: solid 1px #dddddd;
+}
+
+#searchBox div {
+    margin: 10px 10px;
+}
+
+#advancedSearch {
+    display: none;
+}
+
+/*end: search*/
