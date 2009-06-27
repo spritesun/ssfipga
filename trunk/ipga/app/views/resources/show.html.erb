@@ -1,18 +1,43 @@
 <p>
   <b>Location:</b>
-  <%=h @resource.location.name %>
+  <%= h @resource.location.name %>
+</p>
+
+<p>
+  <b>Industry:</b>
+  <%= h @resource.industry.name %>
+</p>
+
+<p>
+  <b>Level:</b>
+  <%= h @resource.level.name %>
+</p>
+
+<p>
+  <b>Official Grade:</b>
+  <%= h @resource.official_grade.name %>
+</p>
+
+<p>
+  <b>Department:</b>
+  <%= h @resource.department.name %>
+</p>
+
+<p>
+  <b>strength:</b>
+  <%= h @resource.strength.rank %>
 </p>
 
 <p>
   <b>Description:</b>
-  <%=h @resource.description %>
+  <%= h @resource.description %>
 </p>
 
 <p>
   <b>Created at:</b>
-  <%=h @resource.created_at %>
+  <%= h @resource.created_at.strftime("%Y-%m-%d") %>
 </p>
 
 
-<%= link_to 'Edit', edit_resource_path(@resource) %> |
-<%= link_to 'Back', resources_path %>
+<%= link_to 'Edit', edit_resource_path(@resource), :class => 'linkButton' %>
+<%= link_to 'Back', resources_path, :class => 'linkButton' %>

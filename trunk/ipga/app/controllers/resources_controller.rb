@@ -50,4 +50,9 @@ class ResourcesController < ApplicationController
 
     redirect_to(resources_url)
   end
+
+  # GET /resources/search
+  def search
+    @resource = Resource.new
+  end
 end
