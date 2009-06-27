@@ -8,7 +8,7 @@
   <%= stylesheet_link_tag 'base' %>
   <%= stylesheet_link_tag 'content' %>
   <%= javascript_include_tag 'jquery-1.3.2.min' %>
-  <%= javascript_include_tag 'base' %>
+  <%= yield(:head) %>
 </head>
 <body>
 <div class="page">

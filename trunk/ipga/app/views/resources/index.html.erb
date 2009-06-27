@@ -1,20 +1,30 @@
-<h1>Listing resources</h1>
+<% content_for(:head) do %>
+    <%= javascript_include_tag "resources/index" %>
+<% end %>
+
+<!--<h1>Listing resources</h1>-->
 
 <div class="list">
   <div class="listHeader">
-    <div class="listColumnTitle">Location</div>
-    <div class="listColumnDescription">Description</div>
-    <div class="listColumnCreatedAt">Created at</div>
+    <div class="listColumn">Location</div>
+    <div class="listColumn">Industry</div>
+    <div class="listColumn">Level</div>
+    <div class="listColumn">Official grade</div>
+    <div class="listColumn">Department</div>
+    <div class="listColumn">Created at</div>
   </div>
   <% for resource in @resources %>
       <div class="listItem">
-        <div class="listColumnTitle"><a href="#"><%= h resource.location.name %></a></div>
-        <div class="listColumnDescription"><%= h resource.description %></div>
-        <div class="listColumnCreatedAt"><%= h resource.created_at %></div>
+        <div class="listColumn"><%= h resource.location.name %></div>
+        <div class="listColumn"><%= h resource.industry.name %></div>
+        <div class="listColumn"><%= h resource.level.name %></div>
+        <div class="listColumn"><%= h resource.official_grade.name %></div>
+        <div class="listColumn"><%= h resource.department.name %></div>
+        <div class="listColumn"><%= h resource.created_at.strftime("%Y-%m-%d") %></div>
         <div class="listTools">
-          <%= link_to 'Show', resource %>
-          <%= link_to 'Edit', edit_resource_path(resource) %>
-          <%= link_to 'Destroy', resource, :confirm => 'Are you sure?', :method => :delete %>
+          <%= link_to  image_tag('button/detail.png', :alt=>'show'), resource, :class => "listToolShow" %>
+          <%= link_to image_tag('button/edit.png', :alt=>'edit'), edit_resource_path(resource), :class => "listToolEdit" %>
+          <%= link_to image_tag('button/delete.png', :alt=>'destroy'), resource, :confirm => 'Are you sure?', :method => :delete, :class => "listToolDestroy" %>
         </div>
       </div>
   <% end %>
