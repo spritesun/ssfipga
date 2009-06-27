@@ -1,22 +1,54 @@
 <% content_for(:head) do %>
-    <%= javascript_include_tag "search" %>
+    <%= javascript_include_tag "resources/search" %>
 <% end %>
 
 <!--<h1>search</h1>-->
 
 <div id="searchBox">
-  <form id="searchForm" method="post">
-    <div id="basicSearch">
-      <label for="keyword">keyword</label>
-      <input type="text" name="keyword"/>
-      <input type="submit" value="search"/>
+  <% form_for(@resource) do |f| %>
+      <div id="basicSearch">
+        <label for="keyword">keyword</label>
+        <input id="keyword" type="text" name="keyword"/>
+        <input id="submit" type="submit" value="search"/>
+      </div>
+      <div id="advancedSearch">
+        <p>
+          <%= f.label :location_id %><br/>
+          <%= f.reference_data_collection_select :location %>
+        </p>
 
-      <div><a id="advancedButton" href="#" title="advanced search">advanced search</a></div>
-    </div>
-    <div id="advancedSearch">
-      <div>item1</div>
-      <div>item2</div>
-      <div>item3</div>
-    </div>
-  </form>
+        <p>
+          <%= f.label :industry_id %><br/>
+          <%= f.reference_data_collection_select :industry %>
+        </p>
+
+        <p>
+          <%= f.label :level_id %><br/>
+          <%= f.reference_data_collection_select :level %>
+        </p>
+
+        <p>
+          <%= f.label :official_grade_id %><br/>
+          <%= f.reference_data_collection_select :official_grade %>
+        </p>
+
+        <p>
+          <%= f.label :department_id %><br/>
+          <%= f.reference_data_collection_select :department %>
+        </p>
+      </div>
+      <div id="advancedButton">
+        <a href="#" title="advanced search">advanced search</a>
+      </div>
+  <% end %>
+</div>
+
+<div id="navigation">
+  <div id="government">government</div>
+  <div id="finance">finance</div>
+  <div id="business">business</div>
+  <a class="nav" href="#">government</a>
+  <a class="nav" href="#">finance</a>
+  <a class="nav" href="#">business</a>
+  <a id="returnLink" href="#">return</a>
 </div>

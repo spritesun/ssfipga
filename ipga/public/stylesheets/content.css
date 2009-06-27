@@ -63,14 +63,96 @@
 #searchBox {
     background: url(../images/SearchBg.gif);
     border: solid 1px #dddddd;
+    position: relative;
+    padding-bottom: 20px;
 }
 
 #searchBox div {
     margin: 10px 10px;
 }
 
+#basicSearch {
+    position: relative;
+}
+
+#advancedButton {
+    position: absolute;
+    right: 10px;
+    bottom: 0px;
+}
+
 #advancedSearch {
     display: none;
+    clear: both;
 }
 
 /*end: search*/
+/*begin: navigation*/
+#navigation {
+    margin: 10px;
+    border: solid 1px #666666;
+    position: relative;
+    height: 320px;
+    background-color: #cfcfcf;
+}
+
+#navigation div {
+    top: 5px;
+    left: 5px;
+    background-color: #efefef;
+    height: 98px;
+    min-height: 98px;
+    border: solid 1px #666666;
+    text-align: center;
+    line-height: 98px;
+    position: absolute;
+    width: 546px;
+}
+
+#navigation div:hover {
+    /*background-color: #cfcfcf;*/
+    cursor: pointer;
+}
+
+#navigation a.nav {
+    background-color: #efefef;
+    width: 186px;
+    display: inline-block;
+    border: solid 1px #666666;
+    border-right: none;
+    position: absolute;
+    left: -1px;
+    bottom: -1px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    outline: none;
+}
+
+#navigation a.nav:hover {
+    background-color: #cfcfcf;
+    text-decoration: none;
+}
+
+#navigation a.selected {
+    border-top: none;
+    background-color: #cfcfcf;
+}
+
+#navigation a.selected:hover {
+    background-color: #cfcfcf;
+}
+
+#returnLink {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+}
+
+#returnLink:hover {
+    cursor: pointer;
+}
+
+/*end: navigation*/

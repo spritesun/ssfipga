@@ -2,6 +2,7 @@
 * {
     margin: 0;
     padding: 0;
+    outline: none;
 }
 
 a {
@@ -99,6 +100,18 @@ p {
 
 .clearBoth {
     clear: both;
+}
+
+.linkButton {
+    border: solid #AAAAAA 1px;
+    padding: 5px;
+    display: inline-block;
+    text-decoration: none
+}
+
+.linkButton:hover {
+    text-decoration: none;
+    background-color: #eeeeee;
 }
 
 /*end: css-reset*/
@@ -345,7 +358,9 @@ p {
     font-size: 80%;
 }
 
-/* error ******/
+/*end: #footer*/
+/*begin: error*/
+
 .fieldWithErrors {
     padding: 2px;
     background-color: red;
@@ -380,4 +395,34 @@ p {
 #errorExplanation ul li {
     font-size: 12px;
     list-style: square;
+}
+
+/*end: error*/
+/*begin: form*/
+
+/*end: form*/
+#content select, #content input, #content textarea {
+    background: #FFFFFF none repeat scroll 0 0;
+    border: 1px solid #DFDFDF;
+    width: 260px;
+    line-height: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+#content input[type="button"], #content input[type="submit"] {
+    width: 80px;
+    height: 22px;
+    vertical-align: middle;
+}
+
+#content input[type="button"]:hover, #content input[type="submit"]:hover {
+    width: 80px;
+    background-color: #EFEFEF;
+    cursor: pointer;
+    border: #ff9900;
+}
+
+.inputEnter {
+    border: #ff9900 !important;
 }
