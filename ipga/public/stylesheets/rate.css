@@ -1,0 +1,14 @@
+.rateStar {
+    width: 17px;
+    height: 17px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.rateY {
+    background: url(../images/stars/stars.gif) center -4px;
+}
+
+.rateN {
+    background: url(../images/stars/stars.gif) center -29px;
+}
