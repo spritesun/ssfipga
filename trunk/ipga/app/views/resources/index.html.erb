@@ -1,5 +1,7 @@
 <% content_for(:head) do %>
     <%= javascript_include_tag "resources/index" %>
+    <%= javascript_include_tag "jquery.blockUI" %>
+    <%= javascript_include_tag "jquery-ui-1.7.2.custom.min" %>
 <% end %>
 
 <!--<h1>Listing resources</h1>-->
@@ -25,7 +27,10 @@
         <div class="listTools">
           <%= link_to image_tag('button/detail.png', :alt=>'show'), resource, :class => "listToolShow" %>
           <%= link_to image_tag('button/edit.png', :alt=>'edit'), edit_resource_path(resource), :class => "listToolEdit" %>
-          <%= link_to image_tag('button/delete.png', :alt=>'destroy'), resource, :confirm => 'Are you sure?', :method => :delete, :class => "listToolDestroy" %>
+          <%= link_to image_tag('button/delete.png', :alt=>'destroy'), resource, :confirm => 'Are you sure?',
+                      :method => :delete, :class => "listToolDestroy" %>
+          <a href="#" class="listToolRequest"><%= image_tag 'button/email.png', :alt=>'request' %></a>
+          <a href="#" class="listToolCartAdd"><%= image_tag 'button/cart_add.png', :alt=>'add to cart' %></a>
         </div>
       </div>
   <% end %>
