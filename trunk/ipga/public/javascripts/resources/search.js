@@ -1,12 +1,10 @@
 // search
 $(document).ready(function ()
 {
-    $('#advancedButton a').toggle(function () {
+    $('#advancedButton a').click(function () {
         $(this).text('hide advanced search');
-        $('#advancedSearch').show();
-    }, function() {
-        $(this).text('advanced search');
-        $('#advancedSearch').hide();
+        $('#advancedSearch').slideToggle();
+        return false;
     });
 
     // keyword

@@ -25,7 +25,8 @@
 
 <p>
   <b>strength:</b>
-  <%= h @resource.strength.rank %>
+  <!--<%= h @resource.strength.rank %>-->
+  <%= image_tag 'stars/star' + @resource.strength.rank.to_s + '.gif' %>
 </p>
 
 <p>

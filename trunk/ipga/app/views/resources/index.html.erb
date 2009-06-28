@@ -21,8 +21,9 @@
         <div class="listColumn"><%= h resource.official_grade.name %></div>
         <div class="listColumn"><%= h resource.department.name %></div>
         <div class="listColumn"><%= h resource.created_at.strftime("%Y-%m-%d") %></div>
+        <div class="listRate"><%= image_tag 'stars/star' + resource.strength.rank.to_s + '.gif' %></div>
         <div class="listTools">
-          <%= link_to  image_tag('button/detail.png', :alt=>'show'), resource, :class => "listToolShow" %>
+          <%= link_to image_tag('button/detail.png', :alt=>'show'), resource, :class => "listToolShow" %>
           <%= link_to image_tag('button/edit.png', :alt=>'edit'), edit_resource_path(resource), :class => "listToolEdit" %>
           <%= link_to image_tag('button/delete.png', :alt=>'destroy'), resource, :confirm => 'Are you sure?', :method => :delete, :class => "listToolDestroy" %>
         </div>

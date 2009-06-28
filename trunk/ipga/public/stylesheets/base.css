@@ -400,7 +400,6 @@ p {
 /*end: error*/
 /*begin: form*/
 
-/*end: form*/
 #content select, #content input, #content textarea {
     background: #FFFFFF none repeat scroll 0 0;
     border: 1px solid #DFDFDF;
@@ -408,6 +407,11 @@ p {
     line-height: 20px;
     height: 20px;
     vertical-align: middle;
+    font-size: 12px;
+}
+
+#content textarea {
+    height: 80px;
 }
 
 #content input[type="button"], #content input[type="submit"] {
@@ -426,3 +430,5 @@ p {
 .inputEnter {
     border: #ff9900 !important;
 }
+
+/*end: form*/
