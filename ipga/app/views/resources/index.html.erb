@@ -25,12 +25,11 @@
         <div class="listColumn"><%= h resource.created_at.strftime("%Y-%m-%d") %></div>
         <div class="listRate"><%= image_tag 'stars/star' + resource.strength.rank.to_s + '.gif' %></div>
         <div class="listTools">
-          <%= link_to image_tag('button/detail.png', :alt=>'show'), resource, :class => "listToolShow" %>
-          <%= link_to image_tag('button/edit.png', :alt=>'edit'), edit_resource_path(resource), :class => "listToolEdit" %>
-          <%= link_to image_tag('button/delete.png', :alt=>'destroy'), resource, :confirm => 'Are you sure?',
-                      :method => :delete, :class => "listToolDestroy" %>
-          <a href="#" class="listToolRequest"><%= image_tag 'button/email.png', :alt=>'request' %></a>
-          <a href="#" class="listToolCartAdd"><%= image_tag 'button/cart_add.png', :alt=>'add to cart' %></a>
+          <%= link_to 'show', resource, :class => "show" %>
+          <%= link_to 'edit', edit_resource_path(resource), :class => "edit" %>
+          <%= link_to 'destroy', resource, :confirm => 'Are you sure?', :method => :delete, :class => "destroy" %>
+          <a href="#" class="request">request</a>
+          <a href="#" class="cartAdd">add to cart</a>
         </div>
       </div>
   <% end %>

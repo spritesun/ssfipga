@@ -25,10 +25,14 @@
 
 #content div.listItem {
     clear: both;
-    background-color: #F7F7F7;
+    background-color: #F0F0F0;
     border-bottom: 1px solid #DDDDDD;
     border-top: 1px solid #FFFFFF;
     position: relative;
+}
+
+#content div.listItem:hover {
+    background-color: #FAFAFA !important;
 }
 
 #content .listColumn {
@@ -49,22 +53,63 @@
 }
 
 #content .listItem .listTools {
-    clear: both;
-    margin-left: 20px;
-    margin-top: 10px;
     position: absolute;
     right: 10px;
-    bottom: 10px;
+    bottom: 0px;
 }
 
 #content .listItem .listTools a {
-    margin-right: 5px;
-    clear: none;
-    float: left;
+    background: no-repeat left bottom;
+    height: 16px;
+    width: 16px;
+    overflow: hidden;
+    display: inline-block;
+    text-indent: -9999px;
+    *line-height: 0px; /*ie*/
+    *text-indent: 0px; /*ie*/
+}
+
+#content .listItem .listTools a.show {
+    background-image: url(../images/button/detail2.png);
+}
+
+#content .listItem .listTools a.show:hover {
+    background-image: url(../images/button/detail.png);
+}
+
+#content .listItem .listTools a.edit {
+    background-image: url(../images/button/edit2.png);
+}
+
+#content .listItem .listTools a.edit:hover {
+    background-image: url(../images/button/edit.png);
+}
+
+#content .listItem .listTools a.destroy {
+    background-image: url(../images/button/delete2.png);
+}
+
+#content .listItem .listTools a.destroy:hover {
+    background-image: url(../images/button/delete.png);
+}
+
+#content .listItem .listTools a.request {
+    background-image: url(../images/button/email2.png);
+}
+
+#content .listItem .listTools a.request:hover {
+    background-image: url(../images/button/email.png);
+}
+
+#content .listItem .listTools a.cartAdd {
+    background-image: url(../images/button/cart_add2.png);
+}
+
+#content .listItem .listTools a.cartAdd:hover {
+    background-image: url(../images/button/cart_add.png);
 }
 
 /*end: list*/
-
 /*begin: search*/
 #searchBox {
     background: url(../images/SearchBg.gif);
