@@ -1,5 +1,9 @@
 $(document).ready(function() {
-    $('.listToolRequest').click(function() {
+
+    $('#content .listItem:even').css('background-color', '#F5F5F5');
+
+    // request
+    $('.request').click(function() {
         $.blockUI({
             message: $('<h1>sending a request</h1>'),
             css: {
@@ -16,7 +20,8 @@ $(document).ready(function() {
         return false;
     })
 
-    $('.listToolCartAdd').click(function() {
+    // add to cart
+    $('.cartAdd').click(function() {
         $.blockUI({
             message: $('<h1>add a new item</h1>'),
             css: {
