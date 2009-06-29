@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+    // 斑马线
     $('#content .listItem:even').css('background-color', '#F5F5F5');
 
     // request
@@ -20,7 +20,7 @@ $(document).ready(function() {
         return false;
     })
 
-    // add to cart
+    // click button, add to cart
     $('.cartAdd').click(function() {
         $.blockUI({
             message: $('<h1>add a new item</h1>'),
@@ -44,4 +44,19 @@ $(document).ready(function() {
 
         return false;
     });
+
+    // drag to cart
+    $(".listItem").draggable({
+        helper: 'clone',
+        zIndex:'10'
+    });
+    $("#col3").droppable({
+        accept: ".listItem",
+        activeClass: 'droppable-active',
+        hoverClass: 'droppable-hover',
+        drop: function(ev, ui) {
+            $('<li/>').text('new item').appendTo($('#shopCart ul')).effect("highlight", {}, 3000);
+        }
+    });
+
 });
