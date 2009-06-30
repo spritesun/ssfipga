@@ -24,7 +24,7 @@
         <li><a href="#">Inbox</a></li>
         <li><a href="#">Account</a></li>
         <li><%= link_to "Search", resources_path %></li>
-        <li><%= link_to "Resources", resources_path %></li>
+        <li><%= link_to "My Resources", { :action => "my" } %></li>
         <li id="searchArea">
           <form method="get" action="#">
             <input class="searchBox" type="text" value="search here..."/>
