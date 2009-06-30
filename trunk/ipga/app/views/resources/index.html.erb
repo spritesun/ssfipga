@@ -1,8 +1,55 @@
 <% content_for(:head) do %>
-    <%= javascript_include_tag "resources/index" %>
-    <%= javascript_include_tag "jquery.blockUI" %>
-    <%= javascript_include_tag "jquery-ui-1.7.2.custom.min" %>
+    <!--%= javascript_include_tag "resources/index" %-->
+    <%= javascript_include_tag "resources/search" %>
 <% end %>
-<%= render :partial => 'list', :locals => {:resources => @resources} %>
-<br/>
+
+<div id="searchBox">
+  <% form_remote_tag :url => search_resources_path, :update => 'results' do %>
+      <div id="basicSearch">
+        <%= label_tag :keyword %>
+        <%= text_field_tag :keyword, @keyword %>
+        <%= submit_tag 'search' %>
+      </div>
+  <% end %>
+  <div id="advancedSearch">
+    <p>
+      <%= label_tag :location_id %><br/>
+      <%= reference_data_collection_select_tag :location %>
+    </p>
+
+    <p>
+      <%= label_tag :industry_id %><br/>
+      <%= reference_data_collection_select_tag :industry %>
+    </p>
+
+    <p>
+      <%= label_tag :level_id %><br/>
+      <%= reference_data_collection_select_tag :level %>
+    </p>
+
+    <p>
+      <%= label_tag :official_grade_id %><br/>
+      <%= reference_data_collection_select_tag :official_grade %>
+    </p>
+
+    <p>
+      <%= label_tag :department_id %><br/>
+      <%= reference_data_collection_select_tag :department %>
+    </p>
+  </div>
+  <div id="advancedButton">
+    <a href="#" title="advanced search">advanced search</a>
+  </div>
+</div>
+
+<div id="results"></div>
+<div id="navigation">
+  <div id="government">government</div>
+  <div id="finance">finance</div>
+  <div id="business">business</div>
+  <a class="nav" href="#">government</a>
+  <a class="nav" href="#">finance</a>
+  <a class="nav" href="#">business</a>
+  <a id="returnLink" href="#">return</a>
+</div>
 <%= link_to 'New resource', new_resource_path, :class => 'linkButton' %>
