@@ -3,38 +3,6 @@
     <%= javascript_include_tag "jquery.blockUI" %>
     <%= javascript_include_tag "jquery-ui-1.7.2.custom.min" %>
 <% end %>
-
-<!--<h1>Listing resources</h1>-->
-
-<div class="list">
-  <div class="listHeader">
-    <div class="listColumn">Location</div>
-    <div class="listColumn">Industry</div>
-    <div class="listColumn">Level</div>
-    <div class="listColumn">Official grade</div>
-    <div class="listColumn">Department</div>
-    <div class="listColumn">Created at</div>
-  </div>
-  <% for resource in @resources %>
-      <div class="listItem">
-        <div class="listColumn"><%= h resource.location.name %></div>
-        <div class="listColumn"><%= h resource.industry.name %></div>
-        <div class="listColumn"><%= h resource.level.name %></div>
-        <div class="listColumn"><%= h resource.official_grade.name %></div>
-        <div class="listColumn"><%= h resource.department.name %></div>
-        <div class="listColumn"><%= h resource.created_at.strftime("%Y-%m-%d") %></div>
-        <div class="listRate"><%= image_tag 'stars/star' + resource.strength.rank.to_s + '.gif' %></div>
-        <div class="listTools">
-          <%= link_to 'show', resource, :class => "show" %>
-          <%= link_to 'edit', edit_resource_path(resource), :class => "edit" %>
-          <%= link_to 'destroy', resource, :confirm => 'Are you sure?', :method => :delete, :class => "destroy" %>
-          <a href="#" class="request">request</a>
-          <a href="#" class="cartAdd">add to cart</a>
-        </div>
-      </div>
-  <% end %>
-</div>
-
+<%= render :partial => 'list', :locals => {:resources => @resources} %>
 <br/>
-
 <%= link_to 'New resource', new_resource_path, :class => 'linkButton' %>
