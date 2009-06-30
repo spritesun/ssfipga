@@ -5,4 +5,5 @@ class Resource < ActiveRecord::Base
   belongs_to :level
   belongs_to :official_grade
   belongs_to :industry
+  belongs_to :user
 end
