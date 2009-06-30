@@ -4,7 +4,7 @@
 <% end %>
 
 <div id="searchBox">
-  <% form_remote_tag :url => search_resources_path, :update => 'results' do %>
+  <% form_remote_tag :url => search_resources_path, :update => 'results', :complete => 'setToolTip()' do %>
       <div id="basicSearch">
         <%= label_tag :keyword %>
         <%= text_field_tag :keyword, @keyword %>

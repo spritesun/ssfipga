@@ -1,3 +1,9 @@
+function setToolTip() {
+    $(".listTools a").tooltip({
+        showURL: false
+    });
+};
+
 $(document).ready(function() {
     // 斑马线
     $('#content .listItem:even').css('background-color', '#F5F5F5');
@@ -58,5 +64,6 @@ $(document).ready(function() {
             $('<li/>').text('new item').appendTo($('#shopCart ul')).effect("highlight", {}, 3000);
         }
     });
+
 
 });
