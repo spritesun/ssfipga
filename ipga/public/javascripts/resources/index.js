@@ -1,14 +1,12 @@
-function setToolTip() {
+var searchCallback = function() {
+    // set tooltip
     $(".listTools a").tooltip({
         showURL: false
     });
-};
-
-$(document).ready(function() {
     // 斑马线
     $('#content .listItem:even').css('background-color', '#F5F5F5');
 
-    // request
+    // set request button
     $('.request').click(function() {
         $.blockUI({
             message: $('<h1>sending a request</h1>'),
@@ -56,6 +54,10 @@ $(document).ready(function() {
         helper: 'clone',
         zIndex:'10'
     });
+}
+
+$(document).ready(function() {
+
     $("#col3").droppable({
         accept: ".listItem",
         activeClass: 'droppable-active',
@@ -64,6 +66,4 @@ $(document).ready(function() {
             $('<li/>').text('new item').appendTo($('#shopCart ul')).effect("highlight", {}, 3000);
         }
     });
-
-
 });
