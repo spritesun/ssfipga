@@ -53,7 +53,10 @@ class ResourcesController < ApplicationController
 
   # GET /resources/search
   def search
-    return if params[:keyword].blank?
-    @results = Resource.all(:include => [:location], :conditions => ['locations.name like ?', "%#{params[:keyword]}%"])
+    @keyword = params[:keyword]
+    return if @keyword.blank?
+    @results = Resource.all(:include => [:location, :industry, :department, :level, :official_grade],
+                            :conditions => ['locations.name like :k OR industries.name like :k OR departments.name like :k OR
+                            levels.name like :k OR official_grades.name like :k', {:k => "%#{@keyword}%"}])
   end
 end

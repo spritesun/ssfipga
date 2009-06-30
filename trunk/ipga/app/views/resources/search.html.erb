@@ -5,9 +5,9 @@
 <div id="searchBox">
   <% form_tag search_resources_path do %>
       <div id="basicSearch">
-        <label for="keyword">keyword</label>
-        <input id="keyword" type="text" name="keyword"/>
-        <input id="submit" type="submit" value="search"/>
+        <%= label_tag :keyword %>
+        <%= text_field_tag :keyword, @keyword %>
+        <%= submit_tag 'search' %>
       </div>
   <% end %>
   <div id="advancedSearch">
@@ -41,7 +41,7 @@
   </div>
 </div>
 
-<% if @results.blank? %>
+<% if @results.nil? %>
     <div id="navigation">
       <div id="government">government</div>
       <div id="finance">finance</div>
@@ -51,6 +51,8 @@
       <a class="nav" href="#">business</a>
       <a id="returnLink" href="#">return</a>
     </div>
+<% elsif @results.empty? %>
+    找不到您要的结果
 <% else %>
     <%= render :partial => 'list', :locals => {:resources => @results} %>
 <% end %>

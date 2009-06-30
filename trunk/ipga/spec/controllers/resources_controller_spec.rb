@@ -21,8 +21,28 @@ describe ResourcesController do
   end
 
   describe 'GET search' do
-    it 'search keywords by partially match of location name' do
-      get :search, :keyword => 'uha'
+    it 'search keywords by partially match of location' do
+      get :search, :keyword => 'Wuh'
+      assigns[:results].should == [Resource.first]
+    end
+
+    it 'search keywords by partially match of industry' do
+      get :search, :keyword => 'Finan'
+      assigns[:results].should == [Resource.first]
+    end
+
+    it 'search keywords by partially match of level' do
+      get :search, :keyword => '区级'
+      assigns[:results].should == [Resource.first]
+    end
+
+    it 'search keywords by partially match of official grade' do
+      get :search, :keyword => '部级'
+      assigns[:results].should == [Resource.first]
+    end
+
+    it 'search keywords by partially match of department' do
+      get :search, :keyword => '法院'
       assigns[:results].should == [Resource.first]
     end
   end
