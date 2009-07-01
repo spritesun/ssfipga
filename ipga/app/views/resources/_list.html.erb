@@ -20,7 +20,8 @@
           <%= link_to 'show', resource, :class => "show", :title => "show" %>
           <%= link_to 'edit', edit_resource_path(resource), :class => "edit", :title => "edit" %>
           <%= link_to 'destroy', resource, :confirm => 'Are you sure?', :method => :delete, :class => "destroy", :title=>"destroy" %>
-          <a href="#" class="request" title="request">request</a>
+          <%= link_to_remote "request", { :url => { :controller => 'requests', :action => 'create', :resource_id => resource.id } },
+                             :class => "request", :title => "request" %>
           <a href="#" class="cartAdd" title="add to cart">add to cart</a>
         </div>
       </div>

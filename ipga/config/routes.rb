@@ -1,6 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   
   map.resources :resources,:collection => { :search => :post, :my => :get }
+  map.resources :requests, :collection => { :create => :get }
 
   map.root :controller => 'account'
   # The priority is based upon order of creation: first created -> highest priority.

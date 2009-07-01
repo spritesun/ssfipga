@@ -6,4 +6,6 @@ class Resource < ActiveRecord::Base
   belongs_to :official_grade
   belongs_to :industry
   belongs_to :user
+
+  validates_presence_of :user
 end
