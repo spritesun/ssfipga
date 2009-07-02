@@ -13,7 +13,10 @@
 <div class="page">
   <div id="header">
     <div id="topnav">
-      <span><a href="/account/login">Login</a> | <a href="#">Contact</a> | <a href="#">About</a></span>
+      <span>
+        <%= current_user ? "Hi, " + current_user.username + " " + link_to("Logout", :controller => 'account', :action => 'logout') \
+            : "Please " +  link_to("Login", :controller => 'account', :action => 'login') %>
+        | <a href="#">Contact</a> | <a href="#">About</a></span>
     </div>
     <h1>Infinite Positive Group</h1>
     <span>A next generation venture incubator, think center and conglomerate company</span>
