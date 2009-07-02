@@ -1,6 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   
-  map.resources :resources,:collection => { :search => :post, :my => :get }
+  map.resources :resources,:collection => { :search => :get, :mine => :get }
   map.resources :requests, :collection => { :create => :get }
 
   map.root :controller => 'account'
