@@ -424,11 +424,11 @@ p {
     width: 80px;
     background-color: #EFEFEF;
     cursor: pointer;
-    border: #ff9900;
+    border: 1px solid #ff9900;
 }
 
 .inputEnter {
-    border: #ff9900 !important;
+    border: 1px solid #ff9900 !important;
 }
 
 /*end: form*/
