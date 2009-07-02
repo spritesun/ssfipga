@@ -64,9 +64,7 @@ class ResourcesController < ApplicationController
     end
   end
 
-  def my
-    @results = Resource.all(:include => [:location, :industry, :department, :level, :official_grade],
-                            :conditions =>['user_id = :k', {:k => "#{self.current_user.id}"}])
-    #render :partial => 'list', :locals => {:resources =>@results }
+  def mine
+    @resources = current_user.resources
   end
 end

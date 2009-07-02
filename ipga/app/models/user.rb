@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
   validates_uniqueness_of   :username, :email, :case_sensitive => false
   before_save :encrypt_password
 
+  has_many :resources, :include => [:location, :industry, :department, :level, :official_grade]
+
   # Authenticates a user by their login name and unencrypted password.  Returns the user or nil.
   def self.authenticate(username, password)
     u = find_by_username(username) # need to get the salt

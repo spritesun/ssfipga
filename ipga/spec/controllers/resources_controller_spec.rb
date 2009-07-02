@@ -46,4 +46,17 @@ describe ResourcesController do
       assigns[:results].should == [Resource.first]
     end
   end
+
+  describe 'GET mine' do
+    it 'list resources related to current user' do
+      get :mine
+      assigns[:resources].should be_include(Resource.first)
+    end
+
+    it 'not list anything when other user' do
+      login_as User.last
+      get :mine
+      assigns[:resources].should be_blank
+    end
+  end
 end
