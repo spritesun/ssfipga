@@ -13,7 +13,6 @@ class RequestsController < ApplicationController
     @request = Request.new
     @request.sender_id= self.current_user.id
     @request.resource_id= params[:resource_id]
-    @request.receiver_id= Resource.find(params[:resource_id]).user.id
 
     if @request.save
       render :text => 'Request was successfully created.'
