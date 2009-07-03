@@ -22,7 +22,7 @@ class ResourcesController < ApplicationController
   # POST /resources
   def create
     @resource = Resource.new(params[:resource])
-    @resource.user = self.current_user
+    @resource.owner = self.current_user
     if @resource.save
       flash[:notice] = 'Resource was successfully created.'
       redirect_to(@resource)

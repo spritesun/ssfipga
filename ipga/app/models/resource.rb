@@ -5,7 +5,7 @@ class Resource < ActiveRecord::Base
   belongs_to :level
   belongs_to :official_grade
   belongs_to :industry
-  belongs_to :owner, :class_name => "User"
+  belongs_to :owner, :class_name => "User", :foreign_key => "owner_id"
 
   validates_presence_of :owner
 end
