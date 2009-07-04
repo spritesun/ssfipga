@@ -15,5 +15,15 @@ class ApplicationController < ActionController::Base
   include AuthenticatedSystem
   # "remember me" functionality
   #before_filter :login_from_cookie
-  before_filter :login_required
+  before_filter :login_required, :set_locale
+
+  def default_url_options(options={})
+    { :locale => I18n.locale }
+  end
+
+  private
+
+  def set_locale
+    I18n.locale = params[:locale]
+  end
 end
