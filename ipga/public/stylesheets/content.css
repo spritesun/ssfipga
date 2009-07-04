@@ -29,7 +29,7 @@
     border-bottom: 1px solid #DDDDDD;
     border-top: 1px solid #FFFFFF;
     position: relative;
-    width:   580px;
+    width: 580px;
 }
 
 #content div.listItem:hover {
@@ -207,3 +207,46 @@
 }
 
 /*end: navigation*/
+
+/*begin: #requestOverlay*/
+#requestOverlay {
+    display: none;
+}
+#requestOverlay div {
+    background-color: #ffffff;
+    color: #000000;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    padding: 20px;
+}
+
+#requestOverlay div h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 120%;
+    margin-bottom: 25px;
+}
+
+#requestOverlay input {
+    background: #DFDFDF none repeat scroll 0 0;
+    border: 1px solid #aaaaaa;
+    width: 260px;
+    line-height: 20px;
+    height: 20px;
+    vertical-align: middle;
+    font-size: 12px;
+}
+
+#requestOverlay input[type="button"]{
+    width: 80px;
+    height: 22px;
+    vertical-align: middle;
+}
+
+#requestOverlay input[type="button"]:hover {
+    width: 80px;
+    background-color: #EFEFEF;
+    cursor: pointer;
+    border: 1px solid #ff9900;
+}
+
+/*end: #requestOverlay*/
