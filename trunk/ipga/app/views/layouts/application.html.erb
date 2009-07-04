@@ -23,11 +23,11 @@
     <!--begin: #mainNav-->
     <div id="mainNav">
       <ul>
-        <li><%= link_to "Home", resources_path %></li>
-        <li><a href="#">Inbox</a></li>
-        <li><a href="#">Account</a></li>
-        <li><%= link_to "Search", resources_path %></li>
-        <li><%= link_to "My Resources", mine_resources_path %></li>
+        <li><%= link_to t(:home), resources_path %></li>
+        <li><%= link_to t(:inbox), '#' %></li>
+        <li><%= link_to t(:account), '#' %></li>
+        <li><%= link_to t(:search), resources_path %></li>
+        <li><%= link_to t(:my_resources), mine_resources_path %></li>
         <li id="searchArea">
           <form method="get" action="#">
             <input class="searchBox" type="text" value="search here..."/>
