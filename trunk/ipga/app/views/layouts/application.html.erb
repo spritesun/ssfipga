@@ -24,10 +24,9 @@
     <div id="mainNav">
       <ul>
         <li><%= link_to t(:home), resources_path %></li>
-        <li><%= link_to t(:inbox), '#' %></li>
-        <li><%= link_to t(:account), '#' %></li>
+        <li><%= link_to t(:inbox), requests_path %></li>
+        <li><%= link_to t(:account), mine_resources_path %></li>
         <li><%= link_to t(:search), resources_path %></li>
-        <li><%= link_to t(:my_resources), mine_resources_path %></li>
         <li id="searchArea">
           <form method="get" action="#">
             <input class="searchBox" type="text" value="search here..."/>

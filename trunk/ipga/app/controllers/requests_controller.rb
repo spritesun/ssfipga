@@ -1,5 +1,12 @@
 class RequestsController < ApplicationController
   # GET /requests
+  def index
+    #@requests = Request.find(~~~~)
+    @requests = Request.all
+    #TODO: 如何三个表关联查询?
+  end
+
+  # GET /requests/create
   def create
     #@request = Request.new(params[:request])
     #

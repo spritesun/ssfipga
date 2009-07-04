@@ -19,11 +19,18 @@
         <div class="listTools">
           <%= link_to 'show', resource, :class => "show", :title => "show" %>
           <%= link_to 'edit', edit_resource_path(resource), :class => "edit", :title => "edit" %>
-          <%= link_to 'destroy', resource, :confirm => 'Are you sure?', :method => :delete, :class => "destroy", :title=>"destroy" %>
-          <%= link_to_remote "request", { :url => { :controller => 'requests', :action => 'create', :resource_id => resource.id } },
-                             :class => "request", :title => "request" %>
+          <%= link_to 'destroy', resource, :confirm => 'Are you sure?', :method => :delete, :class => "destroy", :title => "destroy" %>
+          <%= link_to "request", { :controller => 'requests', :action => 'create', :resource_id => resource.id },
+                      :class => "request", :title => "request" %>
           <a href="#" class="cartAdd" title="add to cart">add to cart</a>
         </div>
       </div>
   <% end %>
+</div>
+<div id="requestOverlay">
+  <div>
+      <h1>Would you like to request this resource?.</h1>
+      <input type="button" id="yes" value="Yes"/>
+      <input type="button" id="no" value="No"/>
+  </div>
 </div>
