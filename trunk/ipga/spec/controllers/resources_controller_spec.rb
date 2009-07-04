@@ -2,8 +2,6 @@ require File.dirname(__FILE__) + '/../spec_helper'
 
 describe ResourcesController do
 
-  fixtures :locations, :strengths, :departments, :levels, :industries, :official_grades, :resources
-
   before :each do
     login_as User.first
   end
@@ -21,42 +19,23 @@ describe ResourcesController do
   end
 
   describe 'GET search' do
-    it 'search keywords by partially match of location' do
-      get :search, :keyword => 'Wuh'
-      assigns[:results].should == [Resource.first]
-    end
-
-    it 'search keywords by partially match of industry' do
-      get :search, :keyword => 'Finan'
-      assigns[:results].should == [Resource.first]
-    end
-
-    it 'search keywords by partially match of level' do
-      get :search, :keyword => '区级'
-      assigns[:results].should == [Resource.first]
-    end
-
-    it 'search keywords by partially match of official grade' do
-      get :search, :keyword => '部级'
-      assigns[:results].should == [Resource.first]
-    end
-
-    it 'search keywords by partially match of department' do
-      get :search, :keyword => '法院'
-      assigns[:results].should == [Resource.first]
+    [:industry, :level, :official_grade, :department, :location].each do |attr|
+      it "search keywords by partially match of #{attr}" do
+        partly_name = attr.constantize.first.name[0..-2]
+        get :search, :keyword => partly_name
+        assigns[:results].each do |resource|
+          resource.send(attr).name.should be_include(partly_name)
+        end
+      end
     end
   end
 
   describe 'GET mine' do
     it 'list resources related to current user' do
       get :mine
-      assigns[:resources].should be_include(Resource.first)
-    end
-
-    it 'not list anything when other user' do
-      login_as User.last
-      get :mine
-      assigns[:resources].should be_blank
+      assigns[:resources].each do |resource|
+        resource.owner.should == current_user
+      end
     end
   end
 end
