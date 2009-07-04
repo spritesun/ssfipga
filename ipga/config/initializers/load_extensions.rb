@@ -1,0 +1,1 @@
+Dir["#{File.expand_path(RAILS_ROOT)}/app/extensions/*_ext.rb"].each { |file| require file }
