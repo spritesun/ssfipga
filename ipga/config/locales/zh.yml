@@ -1,6 +1,7 @@
 zh:
-  home: "首页"
-  inbox: "收件箱"
-  account: "账户"
-  search: "搜索"
-  my_resources: "我的资源"
+  this_file_language: 简体中文
+  navigation:
+    home: 首页
+    inbox: 收件箱
+    account: 账户
+    search: 搜索
