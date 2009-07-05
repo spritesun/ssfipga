@@ -102,11 +102,39 @@ p {
     clear: both;
 }
 
-.linkButton {
-    border: solid #AAAAAA 1px;
-    padding: 5px;
-    display: inline-block;
-    text-decoration: none
+a.linkButton {
+/*border: solid #AAAAAA 1px;*/
+/*padding: 5px;*/
+/*display: inline-block;*/
+/*text-decoration: none;*/
+
+    background: transparent url('../images/bg_button_a.gif') no-repeat scroll top right;
+    color: #444;
+    display: block;
+    float: left;
+    font: normal 12px arial, sans-serif;
+    height: 24px;
+    margin-right: 6px;
+    padding-right: 18px; /* sliding doors padding */
+    text-decoration: none;
+}
+
+a.linkButton span {
+    background: transparent url('../images/bg_button_span.gif') no-repeat;
+    display: block;
+    line-height: 14px;
+    padding: 5px 0 5px 18px;
+}
+
+a.linkButton:active {
+    background-position: bottom right;
+    color: #000;
+    outline: none; /* hide dotted outline in Firefox */
+}
+
+a.linkButton:active span {
+    background-position: bottom left;
+    padding: 6px 0 4px 18px; /* push text down 1px */
 }
 
 .linkButton:hover {
@@ -227,6 +255,16 @@ p {
     position: relative;
 }
 
+.blockHeader {
+    background: #FFFFFF url(../images/blockHeader.gif) repeat-x scroll left top;
+    border-color: #DDDDDD -moz-use-text-color;
+    border-style: solid none;
+    border-width: 1px 0;
+    display: block;
+    text-align: center;
+    padding: 6px 0px;
+}
+
 /*beging: #col1*/
 
 #col1 {
@@ -243,7 +281,7 @@ p {
 
 #inbox {
     background: url(../images/leftRndMid.gif) repeat-y center top;
-    padding: 10px;
+    padding: 0px 10px 10px
 }
 
 #pofile {
@@ -320,7 +358,7 @@ p {
 
 #shopCart {
     background: url(../images/leftRndMid.gif) repeat-y center top;
-    padding: 10px 10px;
+    padding: 0px 10px 10px
 }
 
 #shopCart ul {
@@ -331,7 +369,7 @@ p {
 #shopCart ul li {
     list-style-type: none;
     border: solid 1px #cecece;
-     -webkit-border-radius: 10px;
+    -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     padding: 5px 10px;
     margin: 5px 0px;
