@@ -9,12 +9,12 @@
   </div>
   <% resources.each do |resource| %>
       <div class="listItem">
-        <div class="listColumn"><%= h resource.location.name %></div>
-        <div class="listColumn"><%= h resource.industry.name %></div>
-        <div class="listColumn"><%= h resource.level.name %></div>
-        <div class="listColumn"><%= h resource.official_grade.name %></div>
-        <div class="listColumn"><%= h resource.department.name %></div>
-        <div class="listColumn"><%= h resource.created_at.strftime("%Y-%m-%d") %></div>
+        <div class="listColumn location"><%= h resource.location.name %></div>
+        <div class="listColumn industry"><%= h resource.industry.name %></div>
+        <div class="listColumn level"><%= h resource.level.name %></div>
+        <div class="listColumn official_grade"><%= h resource.official_grade.name %></div>
+        <div class="listColumn department"><%= h resource.department.name %></div>
+        <div class="listColumn create_at"><%= h resource.created_at.strftime("%Y-%m-%d") %></div>
         <div class="listRate"><%= image_tag 'stars/star' + resource.strength.rank.to_s + '.gif' %></div>
         <div class="listTools">
           <%= link_to 'show', resource, :class => "show", :title => "show" %>

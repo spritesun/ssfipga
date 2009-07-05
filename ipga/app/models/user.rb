@@ -15,6 +15,8 @@ class User < ActiveRecord::Base
 
   has_many :resources, :foreign_key => 'owner_id', :include => [:location, :industry, :department, :level, :official_grade]
 
+  has_many :requests, :through => :resources
+
   # Authenticates a user by their login name and unencrypted password.  Returns the user or nil.
   def self.authenticate(username, password)
     u = find_by_username(username) # need to get the salt
