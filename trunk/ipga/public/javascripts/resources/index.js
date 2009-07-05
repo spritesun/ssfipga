@@ -96,7 +96,13 @@ $(document).ready(function() {
         activeClass: 'droppable-active',
         hoverClass: 'droppable-hover',
         drop: function(ev, ui) {
-            $('<li/>').text('new item').appendTo($('#shopCart ul')).effect("highlight", {}, 3000);
+            //ui.draggable.appendTo($('#shopCart ul')).effect("highlight", {}, 3000);
+            var $newLi = $('<li/>');
+            var strArray = ['.location', '.industry', '.level', '.official_grade', '.department', '.create_at']
+            $.each(strArray, function(index, value) {
+                $('<div/>').text(ui.draggable.find(value).text()).appendTo($newLi);
+            });
+            $newLi.appendTo($('#shopCart ul')).effect("highlight", {}, 3000);
         }
     });
 });
