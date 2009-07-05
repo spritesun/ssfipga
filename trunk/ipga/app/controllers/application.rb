@@ -12,18 +12,8 @@ class ApplicationController < ActionController::Base
   # Uncomment this to filter the contents of submitted sensitive data parameters
   # from your application log (in this case, all fields with names like "password"). 
   # filter_parameter_logging :password
-  include AuthenticatedSystem
+  include AuthenticatedSystem, LocalesSwitch::Controller
   # "remember me" functionality
   #before_filter :login_from_cookie
-  before_filter :login_required, :set_locale
-
-  def default_url_options(options={})
-    { :locale => I18n.locale }
-  end
-
-  private
-
-  def set_locale
-    I18n.locale = params[:locale]
-  end
+  before_filter :login_required
 end
