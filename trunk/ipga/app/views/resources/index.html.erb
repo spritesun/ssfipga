@@ -1,42 +1,48 @@
 <% content_for(:head) do %>
     <%= javascript_include_tag "resources/index" %>
     <%= javascript_include_tag "resources/search" %>
+    <%= stylesheet_link_tag 'niceforms-default' %>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $.NiceJForms.build()
+        });
+    </script>
 <% end %>
 
 <div id="searchBox">
-  <% form_remote_tag :url => search_resources_path, :update => 'results', :complete => 'searchCallback()', :method => :get do %>
-      <div id="basicSearch">
+  <% form_remote_tag :url => search_resources_path, :update => 'results', :complete => 'searchCallback()', :method => :get, :html => { :class => 'niceform' } do %>
+      <div id="basicSearch" class="searchBlock">
         <%= label_tag :keyword %>
         <%= text_field_tag :keyword %>
         <%= submit_tag 'search' %>
       </div>
+      <div id="advancedSearch" class="searchBlock">
+        <p>
+          <%= label_tag :location_id %><br/>
+          <%= reference_data_collection_select_tag :location %>
+        </p>
+
+        <p>
+          <%= label_tag :industry_id %><br/>
+          <%= reference_data_collection_select_tag :industry %>
+        </p>
+
+        <p>
+          <%= label_tag :level_id %><br/>
+          <%= reference_data_collection_select_tag :level %>
+        </p>
+
+        <p>
+          <%= label_tag :official_grade_id %><br/>
+          <%= reference_data_collection_select_tag :official_grade %>
+        </p>
+
+        <p>
+          <%= label_tag :department_id %><br/>
+          <%= reference_data_collection_select_tag :department %>
+        </p>
+      </div>
   <% end %>
-  <div id="advancedSearch">
-    <p>
-      <%= label_tag :location_id %><br/>
-      <%= reference_data_collection_select_tag :location %>
-    </p>
-
-    <p>
-      <%= label_tag :industry_id %><br/>
-      <%= reference_data_collection_select_tag :industry %>
-    </p>
-
-    <p>
-      <%= label_tag :level_id %><br/>
-      <%= reference_data_collection_select_tag :level %>
-    </p>
-
-    <p>
-      <%= label_tag :official_grade_id %><br/>
-      <%= reference_data_collection_select_tag :official_grade %>
-    </p>
-
-    <p>
-      <%= label_tag :department_id %><br/>
-      <%= reference_data_collection_select_tag :department %>
-    </p>
-  </div>
   <div id="advancedButton">
     <a href="#" title="advanced search">advanced search</a>
   </div>
