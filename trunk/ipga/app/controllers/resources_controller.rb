@@ -54,9 +54,10 @@ class ResourcesController < ApplicationController
   # GET /resources/search
   def search
     render :text => '请输入查询条件' and return if params[:keyword].blank?
+    name = "#{I18n.locale}_name"
     @results = Resource.all(:include => [:location, :industry, :department, :level, :official_grade],
-                            :conditions => ['locations.name like :k OR industries.name like :k OR departments.name like :k OR
-                            levels.name like :k OR official_grades.name like :k', {:k => "%#{params[:keyword]}%"}])
+                            :conditions => ["locations.#{name} like :k OR industries.name like :k OR departments.name like :k OR
+                            levels.name like :k OR official_grades.name like :k", {:k => "%#{params[:keyword]}%"}])
     if @results.blank?
       render :text => '找不到您要的结果'
     else

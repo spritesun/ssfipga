@@ -9,7 +9,7 @@ class Request < ActiveRecord::Base
     resource.owner
   end
 
-  def validate_on_create
+  def validate
     if sender.id == receiver.id
       errors.add("sender", "can not request yourself." )
     end
