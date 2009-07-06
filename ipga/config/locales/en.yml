@@ -9,3 +9,5 @@ en:
     account: Account
     search: Search
   no_resource: No resource
+  can_not_request_self: "Sorry, you can not request yourself."
+  search_here:  "search here..."
