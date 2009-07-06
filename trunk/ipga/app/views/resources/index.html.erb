@@ -4,10 +4,10 @@
 <% end %>
 
 <div id="searchBox">
-  <% form_remote_tag :url => search_resources_path, :update => 'results', :complete => 'searchCallback()' do %>
+  <% form_remote_tag :url => search_resources_path, :update => 'results', :complete => 'searchCallback()', :method => :get do %>
       <div id="basicSearch">
         <%= label_tag :keyword %>
-        <%= text_field_tag :keyword, @keyword %>
+        <%= text_field_tag :keyword %>
         <%= submit_tag 'search' %>
       </div>
   <% end %>
@@ -42,7 +42,9 @@
   </div>
 </div>
 
-<div id="results"></div>
+<div id="results">
+  <%= render(:partial => 'list', :locals => {:resources => @results}) %>
+</div>
 <div id="navigation">
   <div id="government">government</div>
   <div id="finance">finance</div>

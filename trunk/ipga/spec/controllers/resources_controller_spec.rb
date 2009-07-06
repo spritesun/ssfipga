@@ -29,6 +29,12 @@ describe ResourcesController do
         end
       end
     end
+
+    it 'does not list my resource in search results' do
+      my_resource = current_user.resources.first
+      get :search, :keyword => my_resource.location.name
+      assigns[:results].should_not be_include(my_resource)
+    end
   end
 
   describe 'GET mine' do

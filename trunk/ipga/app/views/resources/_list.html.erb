@@ -23,8 +23,7 @@
               <%= link_to 'show', resource, :class => "show", :title => "show" %>
               <%= link_to 'edit', edit_resource_path(resource), :class => "edit", :title => "edit" %>
               <%= link_to 'destroy', resource, :confirm => 'Are you sure?', :method => :delete, :class => "destroy", :title => "destroy" %>
-              <%= link_to "request", { :controller => 'requests', :action => 'create', :resource_id => resource.id },
-                          :class => "request", :title => "request" %>
+              <%= link_to "request", create_requests_path(:resource_id => resource.id), :class => "request", :title => "request" %>
               <a href="#" class="cartAdd" title="add to cart">add to cart</a>
             </div>
           </div>
