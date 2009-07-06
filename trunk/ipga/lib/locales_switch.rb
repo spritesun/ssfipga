@@ -21,7 +21,7 @@ module LocalesSwitch
     def set_locale
       # I18n.default_locale returns the current default locale. Defaults to 'en-US'
       locale = params[LOCALE_IDENTIFIER] || session[LOCALE_IDENTIFIER] || (current_user.send(LOCALE_IDENTIFIER) if logged_in?) || I18n.default_locale
-      session[LOCALE_IDENTIFIER] = I18n.locale = locale
+      session[LOCALE_IDENTIFIER] = I18n.locale = locale if available_locales.include?(locale)
     end
 
     def available_locales
