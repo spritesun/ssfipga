@@ -1,6 +1,7 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
 describe ResourcesController do
+  integrate_views
 
   before :each do
     login_as User.first

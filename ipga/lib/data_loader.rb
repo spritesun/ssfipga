@@ -2,6 +2,7 @@ module DataLoader
   def load_demo_data
     @fixtures = {}
     create_resources
+    create_request
   end
 
   private
@@ -11,6 +12,10 @@ module DataLoader
     10.times do
       Resource.create!(rand_attrs(:location, :department, :industry, :level, :official_grade, :strength, :owner => :user))
     end
+  end
+
+  def create_request
+    Request.destroy_all
   end
 
   def rand_attrs(*attrs)

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090702142902) do
+ActiveRecord::Schema.define(:version => 20090706013449) do
 
   create_table "departments", :force => true do |t|
     t.string "name"
@@ -24,7 +24,8 @@ ActiveRecord::Schema.define(:version => 20090702142902) do
   end
 
   create_table "locations", :force => true do |t|
-    t.string "name"
+    t.string "en_name"
+    t.string "zh_name"
   end
 
   create_table "official_grades", :force => true do |t|
@@ -64,6 +65,7 @@ ActiveRecord::Schema.define(:version => 20090702142902) do
     t.datetime "updated_at"
     t.string   "remember_token"
     t.datetime "remember_token_expires_at"
+    t.string   "locale"
   end
 
 end

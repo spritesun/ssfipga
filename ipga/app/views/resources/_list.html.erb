@@ -1,36 +1,40 @@
-<div class="list">
-  <div class="listHeader">
-    <div class="listColumn">Location</div>
-    <div class="listColumn">Industry</div>
-    <div class="listColumn">Level</div>
-    <div class="listColumn">Official grade</div>
-    <div class="listColumn">Department</div>
-    <div class="listColumn">Created at</div>
-  </div>
-  <% resources.each do |resource| %>
-      <div class="listItem">
-        <div class="listColumn location"><%= h resource.location.name %></div>
-        <div class="listColumn industry"><%= h resource.industry.name %></div>
-        <div class="listColumn level"><%= h resource.level.name %></div>
-        <div class="listColumn official_grade"><%= h resource.official_grade.name %></div>
-        <div class="listColumn department"><%= h resource.department.name %></div>
-        <div class="listColumn create_at"><%= h resource.created_at.strftime("%Y-%m-%d") %></div>
-        <div class="listRate"><%= image_tag 'stars/star' + resource.strength.rank.to_s + '.gif' %></div>
-        <div class="listTools">
-          <%= link_to 'show', resource, :class => "show", :title => "show" %>
-          <%= link_to 'edit', edit_resource_path(resource), :class => "edit", :title => "edit" %>
-          <%= link_to 'destroy', resource, :confirm => 'Are you sure?', :method => :delete, :class => "destroy", :title => "destroy" %>
-          <%= link_to "request", { :controller => 'requests', :action => 'create', :resource_id => resource.id },
-                      :class => "request", :title => "request" %>
-          <a href="#" class="cartAdd" title="add to cart">add to cart</a>
-        </div>
+<% if resources.blank? %>
+    <%= t('no_resource') %>
+<% else %>
+    <div class="list">
+      <div class="listHeader">
+        <div class="listColumn">Location</div>
+        <div class="listColumn">Industry</div>
+        <div class="listColumn">Level</div>
+        <div class="listColumn">Official grade</div>
+        <div class="listColumn">Department</div>
+        <div class="listColumn">Created at</div>
       </div>
-  <% end %>
-</div>
-<div id="requestOverlay">
-  <div>
-      <h1>Would you like to request this resource?.</h1>
-      <input type="button" id="yes" value="Yes"/>
-      <input type="button" id="no" value="No"/>
-  </div>
-</div>
+      <% resources.each do |resource| %>
+          <div class="listItem">
+            <div class="listColumn location"><%= h resource.location.name %></div>
+            <div class="listColumn industry"><%= h resource.industry.name %></div>
+            <div class="listColumn level"><%= h resource.level.name %></div>
+            <div class="listColumn official_grade"><%= h resource.official_grade.name %></div>
+            <div class="listColumn department"><%= h resource.department.name %></div>
+            <div class="listColumn create_at"><%= h resource.created_at.strftime("%Y-%m-%d") %></div>
+            <div class="listRate"><%= image_tag 'stars/star' + resource.strength.rank.to_s + '.gif' %></div>
+            <div class="listTools">
+              <%= link_to 'show', resource, :class => "show", :title => "show" %>
+              <%= link_to 'edit', edit_resource_path(resource), :class => "edit", :title => "edit" %>
+              <%= link_to 'destroy', resource, :confirm => 'Are you sure?', :method => :delete, :class => "destroy", :title => "destroy" %>
+              <%= link_to "request", { :controller => 'requests', :action => 'create', :resource_id => resource.id },
+                          :class => "request", :title => "request" %>
+              <a href="#" class="cartAdd" title="add to cart">add to cart</a>
+            </div>
+          </div>
+      <% end %>
+    </div>
+    <div id="requestOverlay">
+      <div>
+        <h1>Would you like to request this resource?.</h1>
+        <input type="button" id="yes" value="Yes"/>
+        <input type="button" id="no" value="No"/>
+      </div>
+    </div>
+<% end %>

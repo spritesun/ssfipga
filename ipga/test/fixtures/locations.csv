@@ -1,5 +1,5 @@
-id,name
-1,Wuhan
-2,Beijing
-3,Tianjin
-4,Shanghai
+id,en_name,zh_name
+1,Wuhan,武汉
+2,Beijing,北京
+3,Tianjin,天津
+4,Shanghai,上海
