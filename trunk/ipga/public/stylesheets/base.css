@@ -451,37 +451,3 @@ a.linkButton:active span {
 }
 
 /*end: error*/
-/*begin: form*/
-
-/*#content select, #content input, #content textarea {*/
-    /*background: #FFFFFF none repeat scroll 0 0;*/
-    /*border: 1px solid #DFDFDF;*/
-    /*width: 260px;*/
-    /*line-height: 20px;*/
-    /*height: 20px;*/
-    /*vertical-align: middle;*/
-    /*font-size: 12px;*/
-/*}*/
-
-/*#content textarea {*/
-    /*height: 80px;*/
-/*}*/
-
-/*#content input[type="button"], #content input[type="submit"] {*/
-    /*width: 80px;*/
-    /*height: 22px;*/
-    /*vertical-align: middle;*/
-/*}*/
-
-/*#content input[type="button"]:hover, #content input[type="submit"]:hover {*/
-    /*width: 80px;*/
-    /*background-color: #EFEFEF;*/
-    /*cursor: pointer;*/
-    /*border: 1px solid #ff9900;*/
-/*}*/
-
-/*.inputEnter {*/
-    /*border: 1px solid #ff9900 !important;*/
-/*}*/
-
-/*end: form*/

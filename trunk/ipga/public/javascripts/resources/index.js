@@ -59,8 +59,9 @@ var searchCallback = function() {
 
     // click button, add to cart
     $('.cartAdd').click(function() {
+        var $item = $(this).parent().parent();
         $.blockUI({
-            message: $('<h1>add a new item</h1>'),
+            message: $('<h1>adding a new item</h1>'),
             css: {
                 border: 'none',
                 padding: '0px',
@@ -74,10 +75,11 @@ var searchCallback = function() {
         setTimeout(function() {
             $.unblockUI({
                 onUnblock: function () {
-                    $('<li/>').text('new item').appendTo($('#shopCart ul')).effect("highlight", {}, 3000);
+                    //$('<li/>').text('new item').appendTo($('#shopCart ul')).effect("highlight", {}, 3000);
+                    add_to_cart($item);
                 }
             });
-        }, 1000);
+        }, 500);
 
         return false;
     });
@@ -96,13 +98,16 @@ $(document).ready(function() {
         activeClass: 'droppable-active',
         hoverClass: 'droppable-hover',
         drop: function(ev, ui) {
-            //ui.draggable.appendTo($('#shopCart ul')).effect("highlight", {}, 3000);
-            var $newLi = $('<li/>');
-            var strArray = ['.location', '.industry', '.level', '.official_grade', '.department', '.create_at']
-            $.each(strArray, function(index, value) {
-                $('<div/>').text(ui.draggable.find(value).text()).appendTo($newLi);
-            });
-            $newLi.appendTo($('#shopCart ul')).effect("highlight", {}, 3000);
+            add_to_cart(ui.draggable);
         }
     });
 });
+
+var add_to_cart = function(draggable) {
+    var $newLi = $('<li/>');
+    var strArray = ['.location', '.industry', '.level', '.official_grade', '.department', '.create_at']
+    $.each(strArray, function(index, value) {
+        $('<div/>').text(draggable.find(value).text()).appendTo($newLi);
+    });
+    $newLi.appendTo($('#shopCart ul')).effect("highlight", {}, 3000);
+}
