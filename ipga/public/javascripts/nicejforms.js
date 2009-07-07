@@ -463,7 +463,8 @@ jQuery.NiceJForms = {
             })
                     .addClass("selectButton")
                     .bind('click', {who:q}, function(e) {
-                self.showOptions(e)
+                self.showOptions(e);
+                return false;
             })
                     .keydown(jQuery.NiceJForms.keyPressed);
 
@@ -489,6 +490,16 @@ jQuery.NiceJForms = {
                     .addClass("optionsDivInvisible");
 
             $(optionsDiv).insertAfter(selectArea);
+            // hide options when mouse out
+            $(optionsDiv).hover(function() {
+            }, function (event) {
+                $(this).removeClass("optionsDivVisible").addClass("optionsDivInvisible");
+            });
+
+            //$(button).hover(function() {
+            //}, function (event) {
+            //    $(optionsDiv).removeClass("optionsDivVisible").addClass("optionsDivInvisible");
+            //});
 
             //get select's options and add to options div
             $(jQuery.NiceJForms.selects[q]).children().each(function(w) {
@@ -502,7 +513,8 @@ jQuery.NiceJForms = {
                         .append(optionTxt)
                         .bind('click', {who: q, id:jQuery.NiceJForms.selects[q].id, option:w, select:q}, function(e) {
                     self.showOptions(e);
-                    self.selectMe(jQuery.NiceJForms.selects[q].id, w, q)
+                    self.selectMe(jQuery.NiceJForms.selects[q].id, w, q);
+                    return false;
                 });
 
                 jQuery(optionHolder).append(optionLink);

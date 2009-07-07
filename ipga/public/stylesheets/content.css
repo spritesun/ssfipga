@@ -43,7 +43,7 @@
 }
 
 #content .listItem {
-    height: 70px;
+    height: 55px;
     line-height: 2em;
 }
 
@@ -125,10 +125,17 @@
 
 #basicSearch {
     position: relative;
+    padding-left: 25px;
 }
 
 #advancedSearch {
     display: none;
+}
+
+#advancedSearch > p {
+    float: left;
+    margin-top: 10px;
+    margin-left: 25px;
 }
 
 #advancedButton {
@@ -212,6 +219,7 @@
 #requestOverlay {
     display: none;
 }
+
 #requestOverlay div {
     background-color: #ffffff;
     color: #000000;
@@ -236,7 +244,7 @@
     font-size: 12px;
 }
 
-#requestOverlay input[type="button"]{
+#requestOverlay input[type="button"] {
     width: 80px;
     height: 22px;
     vertical-align: middle;
