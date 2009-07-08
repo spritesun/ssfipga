@@ -60,7 +60,7 @@
 }
 
 #content .listItem .listTools a {
-    background: no-repeat left bottom;
+    background: no-repeat left top;
     height: 16px;
     width: 16px;
     overflow: hidden;
@@ -70,43 +70,27 @@
     *text-indent: 0px; /*ie*/
 }
 
-#content .listItem .listTools a.show {
-    background-image: url(../images/button/detail2.png);
+#content .listItem .listTools a:hover {
+    background: no-repeat left bottom;
 }
 
-#content .listItem .listTools a.show:hover {
+#content .listItem .listTools a.show {
     background-image: url(../images/button/detail.png);
 }
 
 #content .listItem .listTools a.edit {
-    background-image: url(../images/button/edit2.png);
-}
-
-#content .listItem .listTools a.edit:hover {
     background-image: url(../images/button/edit.png);
 }
 
 #content .listItem .listTools a.destroy {
-    background-image: url(../images/button/delete2.png);
-}
-
-#content .listItem .listTools a.destroy:hover {
     background-image: url(../images/button/delete.png);
 }
 
 #content .listItem .listTools a.request {
-    background-image: url(../images/button/email2.png);
-}
-
-#content .listItem .listTools a.request:hover {
     background-image: url(../images/button/email.png);
 }
 
 #content .listItem .listTools a.cartAdd {
-    background-image: url(../images/button/cart_add2.png);
-}
-
-#content .listItem .listTools a.cartAdd:hover {
     background-image: url(../images/button/cart_add.png);
 }
 
@@ -214,7 +198,6 @@
 }
 
 /*end: navigation*/
-
 /*begin: #requestOverlay*/
 #requestOverlay {
     display: none;
