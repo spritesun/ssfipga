@@ -436,6 +436,10 @@ jQuery.NiceJForms = {
         var self = this;
 
         jQuery.NiceJForms.selects.each(function(q) {
+            if (this.id == 'resource_strength_id') {
+                return;
+            }
+
             //create and build div structure
             var selectArea = document.createElement('div');
             var left = document.createElement('div');

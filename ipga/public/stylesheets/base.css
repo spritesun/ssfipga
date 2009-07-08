@@ -144,7 +144,6 @@ a.linkButton:active span {
 
 /*end: css-reset*/
 /*begin: #header*/
-
 #header, #nav, #main, #footer {
     clear: both;
 }
@@ -241,7 +240,6 @@ a.linkButton:active span {
 
 /*end: #header*/
 /*begin: page_margins*/
-
 .page_margins {
     background: #EEEEEE none repeat scroll 0 0;
     border-bottom: 2px solid #3399FF;
@@ -326,7 +324,6 @@ a.linkButton:active span {
 
 /*end: #col1*/
 /*begin: #col2*/
-
 #col2 {
     float: left;
     width: 580px;
@@ -343,7 +340,6 @@ a.linkButton:active span {
 
 /*end: #col2*/
 /*begin: #col3*/
-
 #col3 {
     float: left;
     width: 170px;
@@ -413,7 +409,6 @@ a.linkButton:active span {
 
 /*end: #footer*/
 /*begin: error*/
-
 .fieldWithErrors {
     padding: 2px;
     background-color: red;

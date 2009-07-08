@@ -1,3 +1,5 @@
+//****** begin: search
+// after ajax search complete
 var searchCallback = function() {
     var requestUrl;
 
@@ -101,6 +103,13 @@ $(document).ready(function() {
             add_to_cart(ui.draggable);
         }
     });
+
+    // search: advanced search button
+    $('#advancedButton a').click(function () {
+        $(this).text('hide advanced search');
+        $('#advancedSearch').slideToggle();
+        return false;
+    });
 });
 
 var add_to_cart = function(draggable) {
@@ -110,4 +119,45 @@ var add_to_cart = function(draggable) {
         $('<div/>').text(draggable.find(value).text()).appendTo($newLi);
     });
     $newLi.appendTo($('#shopCart ul')).effect("highlight", {}, 3000);
-}
+};
+//****** end: search
+
+// 导航块 navigation
+$(document).ready(function ()
+{
+    // 初始化三个nav
+    var initNavigation = function () {
+        $('#navigation div').each(function (index) {
+            $(this).css('top', 5 + index * 105).css('line-height', '98px').height(98).show();
+        });
+
+        $('#navigation a.nav').each(function (index) {
+            $(this).css('left', -1 + index * 186).hide().removeClass('selected');
+        });
+    }
+
+    initNavigation();
+
+    $('#navigation div').click(function () {
+        $('#navigation div').hide().height(276).css({'line-height': '276px', 'top': '5px'});
+        $(this).show();
+        $('#navigation a.nav').show();
+        $('#navigation a.nav:contains("' + $(this).text() + '")').addClass('selected');
+        $('#returnLink').show();
+    });
+
+    $('#navigation a.nav').click(function () {
+        $('#navigation a.nav').removeClass('selected');
+        var $alink = $(this);
+        $alink.addClass('selected');
+        $('#navigation div').hide();
+        $('#navigation div:contains("' + $alink.text() + '")').show();
+        return false;
+    })
+
+    $('#returnLink').click(function () {
+        $(this).hide();
+        initNavigation();
+        return false;
+    })
+});

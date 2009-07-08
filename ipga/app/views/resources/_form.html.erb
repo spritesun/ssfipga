@@ -1,9 +1,15 @@
 <% content_for(:head) do %>
     <%= javascript_include_tag "rate" %>
     <%= stylesheet_link_tag 'rate' %>
+    <%= stylesheet_link_tag 'niceforms-default' %>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $.NiceJForms.build()
+        });
+    </script>
 <% end %>
 
-<% form_for(record) do |f| %>
+<% form_for(record, :html => { :class => 'niceform' }) do |f| %>
     <%= f.error_messages %>
 
     <p>
