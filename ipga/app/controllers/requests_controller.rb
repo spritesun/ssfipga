@@ -13,7 +13,6 @@ class RequestsController < ApplicationController
     if @request.save
       render :text => 'Request was successfully created.'
     else
-      p @request.errors
       render :text => 'Request was not successfully created.'
     end
   end
