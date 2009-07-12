@@ -5,13 +5,8 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
   <title>Resources: <%= controller.action_name %></title>
-  <script type="text/javascript">
-      var GB_ROOT_DIR = "http://localhost:3000/greybox/";
-  </script>
-
   <%= stylesheet_link_tag 'base', 'content', 'jquery.tooltip', '/greybox/gb_styles.css' %>
-  <%= javascript_include_tag :all %>
-  <%= javascript_dir_include_tag '/greybox' %>
+  <%= render :partial => 'shared/javascripts' %>
   <%= yield(:head) %>
 </head>
 <body>
@@ -54,25 +49,6 @@
               <li>message2</li>
             </ul>
           </div>
-          <!--being: #pofile-->
-          <!--<div id="pofile">-->
-          <!--<div id="pofileImg">-->
-          <!--<img src="/images/noImgSmall.gif" alt="no img small"/>-->
-          <!--</div>-->
-          <!--<div id="pofileInfo">-->
-          <!--<h3>Zhe Shu</h3>-->
-
-          <!--<p>manager</p>-->
-          <!--</div>-->
-          <!--<div id="messageNav">-->
-          <!--<ul>-->
-          <!--<li><a href="#">Inbox(0)</a></li>-->
-          <!--<li><a href="#">Some Link</a></li>-->
-          <!--<li><a href="#">Some Link</a></li>-->
-          <!--</ul>-->
-          <!--</div>-->
-          <!--</div>-->
-          <!--end: #pofile-->
         </div>
       </div>
       <!-- end: #col1 -->
