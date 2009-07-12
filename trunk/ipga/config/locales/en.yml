@@ -12,4 +12,5 @@ en:
   can_not_request_self: "Sorry, you can not request yourself."
   search_here:  "search here..."
   title: Title
+  body: Body
   send_request_message: Send request message
