@@ -3,13 +3,6 @@
 var searchCallback = function() {
     var requestUrl;
 
-    // set tooltip
-    $(".listTools a").tooltip({
-        showURL: false
-    });
-    // 斑马线
-    $('#content .listItem:even').css('background-color', '#F5F5F5');
-
     $('#requestOverlay').hide();
 
     // set request button

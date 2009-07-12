@@ -1,14 +1,1 @@
-<% content_for(:head) do %>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            // set tooltip
-            $(".listTools a").tooltip({
-                showURL: false
-            });
-            // 斑马线
-            $('#content .listItem:even').css('background-color', '#F5F5F5');
-        });
-    </script>
-<% end %>
-
 <%= render :partial => 'list', :locals => {:resources => @resources, :is_mine => true} %>
