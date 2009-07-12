@@ -5,8 +5,13 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
   <title>Resources: <%= controller.action_name %></title>
-  <%= stylesheet_link_tag 'base', 'content', 'jquery.tooltip' %>
+  <script type="text/javascript">
+      var GB_ROOT_DIR = "http://localhost:3000/greybox/";
+  </script>
+
+  <%= stylesheet_link_tag 'base', 'content', 'jquery.tooltip', '/greybox/gb_styles.css' %>
   <%= javascript_include_tag :all %>
+  <%= javascript_dir_include_tag '/greybox' %>
   <%= yield(:head) %>
 </head>
 <body>

@@ -4,7 +4,7 @@ class RequestsController < ApplicationController
     @requests = current_user.requests
   end
 
-  # GET /requests/create
+  # POST /requests/create
   def create
     @request = Request.new
     @request.sender_id= self.current_user.id
@@ -15,5 +15,9 @@ class RequestsController < ApplicationController
     else
       render :text => 'Request was not successfully created.'
     end
+  end
+
+  def new
+    @request = Request.new
   end
 end
