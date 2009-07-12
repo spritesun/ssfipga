@@ -12,7 +12,7 @@
       <%= f.label_t :body %><br/>
       <%= f.text_area :body %>
     </p>
-    <%= f.hidden_field :request %>
+    <%= hidden_field_tag 'resource_id', @resource_id %>
     <p>
       <%= f.submit "Send" %>
     </p>
