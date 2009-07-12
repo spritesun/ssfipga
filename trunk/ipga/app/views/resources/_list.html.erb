@@ -11,7 +11,7 @@
         <div class="listColumn">Created at</div>
       </div>
       <% resources.each do |resource| %>
-          <div class="listItem">
+          <div class="listItem" onclick="<%= resource_path(resource) %>">
             <div class="listColumn location"><%= h resource.location.name %></div>
             <div class="listColumn industry"><%= h resource.industry.name %></div>
             <div class="listColumn level"><%= h resource.level.name %></div>
@@ -22,7 +22,7 @@
             <div class="listTools">
               <%= link_to('edit', edit_resource_path(resource), :class => "edit", :title => "edit") if is_mine %>
               <%= link_to('destroy', resource, :confirm => 'Are you sure?', :method => :delete, :class => "destroy", :title => "destroy") if is_mine %>
-              <%= link_to("request", new_request_path(:resource_id => resource.id), :class => "request", :title => "request", :rel => 'gb_page_center[640, 480]') unless is_mine %>
+              <%= link_to("request", new_request_path(:resource_id => resource.id), :class => "request", :title => "request") unless is_mine %>
               <%= link_to("add to cart", '#', :class => 'cartAdd', :title => 'add to cart') unless is_mine %>
             </div>
           </div>

@@ -12,22 +12,10 @@ var searchCallback = function() {
 
     $('#requestOverlay').hide();
 
-    //// set request button
-    //$('.request').click(function() {
-    //    requestUrl = $(this).attr('href');
-    //    $.blockUI({ message: $('#requestOverlay'),
-    //        css: {
-    //            border: 'none',
-    //            padding: '5px',
-    //            backgroundColor: '#cfcfcf',
-    //            '-webkit-border-radius': '10px',
-    //            '-moz-border-radius': '10px',
-    //            color: '#fff',
-    //            cursor: 'default'
-    //        }
-    //    });
-    //    return false;
-    //});
+    // set request button
+    $('.request').click(function() {
+        return GB_showCenter('send request', this.href)
+    });
 
     $('#yes').click(function() {
         // update the block message
@@ -101,11 +89,6 @@ var searchCallback = function() {
         zIndex:'10',
         refreshPositions: true,
         cursor: 'move'
-    });
-
-    // click item div to show resource
-    $('.listItem').click(function () {
-        window.location.href = $(this).find('.show').attr('href');
     });
 
     $('.listTools a').click(function(event) {
