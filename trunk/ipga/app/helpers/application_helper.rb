@@ -21,4 +21,15 @@ module ApplicationHelper
     href_attr = "href=\"#{url}\"" unless href
     "<a #{href_attr}#{tag_options}><span>#{name || url}</span></a>"
   end
+
+  def javascript_dir_include_tag(*sources)
+    dir_name = sources.shift
+    sources.unshift(
+            Dir.entries(File.join(RAILS_ROOT, 'public', dir_name)).map do |file_name|
+              File.join(dir_name, file_name) if file_name.end_with?('.js')
+            end.compact.sort
+    ).flatten!
+    javascript_include_tag(*sources)
+  end
+
 end
