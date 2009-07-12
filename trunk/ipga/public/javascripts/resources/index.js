@@ -88,8 +88,28 @@ var searchCallback = function() {
 
     // drag to cart
     $(".listItem").draggable({
-        helper: 'clone',
-        zIndex:'10'
+        helper: function() {
+            //return $(this).clone().addClass('onDragging')[0];
+            var $newDiv = $('<div class="onDragging" />');
+            var $this = $(this);
+            var strArray = ['.location', '.industry', '.level', '.official_grade', '.department', '.create_at'];
+            $.each(strArray, function(index, value) {
+                $('<div/>').text($this.find(value).text()).appendTo($newDiv);
+            });
+            return $newDiv[0];
+        },
+        zIndex:'10',
+        refreshPositions: true,
+        cursor: 'move'
+    });
+
+    // click item div to show resource
+    $('.listItem').click(function () {
+        window.location.href = $(this).find('.show').attr('href');
+    });
+
+    $('.listTools a').click(function(event) {
+        event.stopPropagation();
     });
 }
 
@@ -114,7 +134,7 @@ $(document).ready(function() {
 
 var add_to_cart = function(draggable) {
     var $newLi = $('<li/>');
-    var strArray = ['.location', '.industry', '.level', '.official_grade', '.department', '.create_at']
+    var strArray = ['.location', '.industry', '.level', '.official_grade', '.department', '.create_at'];
     $.each(strArray, function(index, value) {
         $('<div/>').text(draggable.find(value).text()).appendTo($newLi);
     });
