@@ -6,6 +6,8 @@ class Request < ActiveRecord::Base
   validates_presence_of :resource
   validate :ensure_sender_receiver_difference
 
+  before_create :set_participator_name
+
   def receiver
     resource.owner
   end
@@ -13,8 +15,15 @@ class Request < ActiveRecord::Base
   private
 
   def ensure_sender_receiver_difference
-    if sender.id == receiver.id
-      errors.add("sender", t(:can_not_request_self))
-    end
+    errors.add("sender", t(:can_not_request_self)) if sender.id == receiver.id
+  end
+
+  def set_participator_name
+    self.sender_friendly_name = rand_name
+    self.receiver_friendly_name = rand_name
+  end
+
+  def rand_name
+    FriendlyName.all.rand.name + rand(10).to_s + rand(10).to_s
   end
 end

@@ -19,6 +19,9 @@ describe RequestsController do
       request = Request.last
       request.sender.should == sender
       request.resource.should == @resource
+
+      request.sender_friendly_name.should_not be_blank
+      request.receiver_friendly_name.should_not be_blank
     end
 
     it "does not send request if sender and receiver are same user" do
@@ -26,7 +29,7 @@ describe RequestsController do
 
       lambda do
         post :create, :resource_id => @resource.id
-      end.should_not change(Request, :count) 
+      end.should_not change(Request, :count)
     end
   end
 end

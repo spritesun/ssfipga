@@ -9,9 +9,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090706013449) do
+ActiveRecord::Schema.define(:version => 20090712060043) do
 
   create_table "departments", :force => true do |t|
+    t.string "name"
+  end
+
+  create_table "friendly_names", :force => true do |t|
     t.string "name"
   end
 
@@ -37,6 +41,8 @@ ActiveRecord::Schema.define(:version => 20090706013449) do
     t.integer  "resource_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "sender_friendly_name"
+    t.string   "receiver_friendly_name"
   end
 
   create_table "resources", :force => true do |t|
