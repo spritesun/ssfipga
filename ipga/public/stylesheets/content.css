@@ -34,6 +34,7 @@
 
 #content div.listItem:hover {
     background-color: #FAFAFA !important;
+    cursor: pointer;
 }
 
 #content .listColumn {
@@ -92,6 +93,18 @@
 
 #content .listItem .listTools a.cartAdd {
     background-image: url(../images/button/cart_add.png);
+}
+
+#content .onDragging {
+    -moz-border-radius-bottomleft: 10px;
+    -moz-border-radius-bottomright: 10px;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    background-color: #F5F5F5;
+    border: 1px solid #CECECE;
+    list-style-type: none;
+    margin: 5px 0;
+    padding: 5px 10px;
 }
 
 /*end: list*/
