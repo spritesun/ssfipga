@@ -1,0 +1,19 @@
+<h1><%= t(:send_request_message) %></h1>
+
+<% form_for(@message, :html => { :class => 'niceform' }) do |f| %>
+    <%= f.error_messages %>
+
+    <p>
+      <%= f.label_t :title %><br/>
+      <%= f.text_field :title %>
+    </p>
+
+    <p>
+      <%= f.label_t :body %><br/>
+      <%= f.text_area :body %>
+    </p>
+    <%= f.hidden_field :request %>
+    <p>
+      <%= f.submit "Send" %>
+    </p>
+<% end %>

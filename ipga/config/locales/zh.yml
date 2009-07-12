@@ -8,3 +8,6 @@ zh:
   no_resource: 没有资源
   can_not_request_self: "对不起，您不能请求自己的资源"
   search_here:  "请在这里搜索..."
+  title: 主题
+  body: 正文
+  send_request_message: 发送请求消息
