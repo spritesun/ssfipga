@@ -1,1 +1,19 @@
-<%= render :partial => 'resources/list', :locals => {:resources => @requests.collect(&:resource)} %>
+<div class="list">
+  <div class="listHeader">
+    <div class="listColumn">发送人</div>
+    <div class="listColumn">接收人</div>
+    <div class="listColumn">创建时间</div>
+    <div class="listColumn">标题</div>
+    <div class="listColumn">内容</div>
+
+  </div>
+  <% @requests.each do |request| %>
+      <div class="listItem">
+        <div class="listColumn"><%= h request.sender_friendly_name %></div>
+        <div class="listColumn"><%= h request.receiver_friendly_name %></div>
+        <div class="listColumn"><%= h request.created_at.to_s(:db) %></div>
+        <div class="listColumn"><%= h request.messages.last.title %></div>
+        <div class="listColumn"><%= h request.messages.last.body %></div>
+      </div>
+  <% end %>
+</div>

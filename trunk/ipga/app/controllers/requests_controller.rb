@@ -1,7 +1,7 @@
 class RequestsController < ApplicationController
   # GET /requests
   def index
-    @requests = current_user.requests
+    @requests = current_user.requests 
   end
 
   ## POST /requests/create
