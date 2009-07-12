@@ -61,7 +61,7 @@ class ResourcesController < ApplicationController
     if @results.blank?
       render :text => '找不到您要的结果'
     else
-      render :partial => 'list', :locals => {:resources => @results}
+      render :partial => 'list', :locals => {:resources => @results, :is_mine => false}
     end
   end
 
