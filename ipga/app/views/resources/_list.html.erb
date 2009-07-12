@@ -20,11 +20,10 @@
             <div class="listColumn create_at"><%= h resource.created_at.strftime("%Y-%m-%d") %></div>
             <div class="listRate"><%= image_tag 'stars/star' + resource.strength.rank.to_s + '.gif' %></div>
             <div class="listTools">
-              <%= link_to 'show', resource, :class => "show", :title => "show" %>
-              <%= link_to 'edit', edit_resource_path(resource), :class => "edit", :title => "edit" %>
-              <%= link_to 'destroy', resource, :confirm => 'Are you sure?', :method => :delete, :class => "destroy", :title => "destroy" %>
-              <%= link_to "request", create_requests_path(:resource_id => resource.id), :class => "request", :title => "request" %>
-              <a href="#" class="cartAdd" title="add to cart">add to cart</a>
+              <%= link_to('edit', edit_resource_path(resource), :class => "edit", :title => "edit") if is_mine %>
+              <%= link_to('destroy', resource, :confirm => 'Are you sure?', :method => :delete, :class => "destroy", :title => "destroy") if is_mine %>
+              <%= link_to("request", create_requests_path(:resource_id => resource.id), :class => "request", :title => "request") unless is_mine %>
+              <%= link_to("add to cart", '#', :class => 'cartAdd', :title => 'add to cart') unless is_mine %>
             </div>
           </div>
       <% end %>
