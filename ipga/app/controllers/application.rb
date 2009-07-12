@@ -16,4 +16,10 @@ class ApplicationController < ActionController::Base
   # "remember me" functionality
   #before_filter :login_from_cookie
   before_filter :login_required
+
+  protected
+
+  def render_greybox(options = {})
+    render options.merge(:layout => 'greybox')
+  end
 end

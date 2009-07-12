@@ -11,7 +11,7 @@
         <div class="listColumn">Created at</div>
       </div>
       <% resources.each do |resource| %>
-          <div class="listItem" onclick="<%= resource_path(resource) %>">
+          <div class="listItem" onclick="window.location.href='<%= resource_path(resource) %>';">
             <div class="listColumn location"><%= h resource.location.name %></div>
             <div class="listColumn industry"><%= h resource.industry.name %></div>
             <div class="listColumn level"><%= h resource.level.name %></div>
@@ -36,3 +36,14 @@
       </div>
     </div>
 <% end %>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        // set tooltip
+        $(".listTools a").tooltip({
+            showURL: false
+        });
+        // 斑马线
+        $('#content .listItem:even').css('background-color', '#F5F5F5');
+    });
+</script>

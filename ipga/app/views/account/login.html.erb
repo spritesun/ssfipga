@@ -1,13 +1,3 @@
-<% content_for(:head) do %>
-    <%= stylesheet_link_tag 'niceforms-default' %>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $.NiceJForms.build();
-            $('#username').focus();
-        });
-    </script>
-<% end %>
-
 <% form_tag nil, :class => 'niceform' do -%>
     <p><label for="username">Login</label><br/>
       <%= text_field_tag 'username' %></p>
