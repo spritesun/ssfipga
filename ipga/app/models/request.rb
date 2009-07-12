@@ -1,6 +1,7 @@
 class Request < ActiveRecord::Base
   belongs_to :sender, :class_name => "User"
   belongs_to :resource
+  has_many :messages
 
   validates_presence_of :sender
   validates_presence_of :resource

@@ -14,8 +14,12 @@ class User < ActiveRecord::Base
   before_save :encrypt_password
 
   has_many :resources, :foreign_key => 'owner_id', :include => [:location, :industry, :department, :level, :official_grade]
+  has_many :sent_requests, :foreign_key => 'sender_id', :class_name => 'Request'
+  has_many :received_requests, :through => :resources, :source => :requests
 
-  has_many :requests, :through => :resources
+  def requests
+    (sent_requests + received_requests).sort_by(&:created_at)
+  end
 
   # Authenticates a user by their login name and unencrypted password.  Returns the user or nil.
   def self.authenticate(username, password)
