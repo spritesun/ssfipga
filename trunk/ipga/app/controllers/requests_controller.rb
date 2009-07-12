@@ -17,7 +17,5 @@ class RequestsController < ApplicationController
     end
   end
 
-  def new
-    @request = Request.new
-  end
+  
 end
