@@ -70,7 +70,6 @@ var searchCallback = function() {
     // drag to cart
     $(".listItem").draggable({
         helper: function() {
-            //return $(this).clone().addClass('onDragging')[0];
             var $newDiv = $('<div class="onDragging" />');
             var $this = $(this);
             var strArray = ['.location', '.industry', '.level', '.official_grade', '.department', '.create_at'];
@@ -81,7 +80,8 @@ var searchCallback = function() {
         },
         zIndex:'10',
         refreshPositions: true,
-        cursor: 'move'
+        cursor: 'move',
+        cursorAt: { top: 20, left: 20 }
     });
 
     $('.listTools a').click(function(event) {
