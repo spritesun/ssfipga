@@ -1,0 +1,13 @@
+<% if messages.blank? %>
+    <%= t('no_message') %>
+<% else %>
+    <div id="messages">
+      <% messages.each do |message| %>
+          <div>
+            <div><%= h message.title %></div>
+            <div><%= h message.body %></div>
+          </div>
+          <hr/>
+      <% end %>
+    </div>
+<% end %>

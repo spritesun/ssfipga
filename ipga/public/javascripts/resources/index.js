@@ -10,36 +10,6 @@ var searchCallback = function() {
         return GB_showCenter('send request', this.href)
     });
 
-    $('#yes').click(function() {
-        // update the block message
-        $.blockUI({ message: "<h1>sending request...</h1>",
-            css: {
-                border: 'none',
-                padding: '10px',
-                backgroundColor: '#000',
-                '-webkit-border-radius': '10px',
-                '-moz-border-radius': '10px',
-                opacity: .5,
-                color: '#fff'
-            }
-        });
-
-        $.ajax({
-            url: requestUrl,
-            cache: false,
-            success: function(data) {
-                // unblock when remote call returns
-                alert(data);
-                $.unblockUI();
-            }
-        });
-    });
-
-    $('#no').click(function() {
-        $.unblockUI();
-        return false;
-    });
-
     // click button, add to cart
     $('.cartAdd').click(function() {
         var $item = $(this).parent().parent();
