@@ -1,21 +1,22 @@
 class RequestsController < ApplicationController
   # GET /requests
   def index
-    @requests = current_user.requests 
+    @requests = current_user.requests
   end
 
-  ## POST /requests/create
-  #def create
-  #  @request = Request.new
-  #  @request.sender_id= self.current_user.id
-  #  @request.resource_id= params[:resource_id]
-  #
-  #  if @request.save
-  #    render :text => 'Request was successfully created.'
-  #  else
-  #    render :text => 'Request was not successfully created.'
-  #  end
-  #end
+  # GET /requests/1
+  def show
+    @request = Request.find(params[:id])
+    @message = Message.new(:request => @request)
+  end
 
-  
+  def reply
+    @message = Message.new(params[:message])
+    if @message.save
+      render :partial => 'list', :locals => {:messages => @message.request.messages}
+    else
+      render :text => '回复失败'
+    end
+  end
+
 end

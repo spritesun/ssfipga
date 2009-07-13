@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
 
   map.resources :resources, :collection => { :search => :get, :mine => :get }
-  map.resources :requests
+  map.resources :requests, :collection => { :reply => :post }
   map.resources :messages
 
   map.root :controller => 'account'
