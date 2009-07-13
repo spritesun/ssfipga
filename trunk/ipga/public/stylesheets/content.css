@@ -125,6 +125,19 @@
     padding-left: 25px;
 }
 
+/*begin: hacked for ie, text input & submit in one line verical-align problem*/
+#basicSearch .buttonSubmit {
+    *top: 5px;
+    *position: relative;
+}
+
+#basicSearch .buttonSubmitHovered {
+    *top: 5px;
+    *position: relative;
+}
+
+/*end: hacked for id*/
+
 #advancedSearch {
     display: none;
 }

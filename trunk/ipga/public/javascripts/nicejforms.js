@@ -447,7 +447,8 @@ jQuery.NiceJForms = {
             var center = document.createElement('div');
             var button = document.createElement('a');
             var text = document.createTextNode(jQuery.NiceJForms.selectText);
-            var selectWidth = parseInt(this.className.replace(/width_/g, ""));
+            //var selectWidth = parseInt(this.className.replace(/width_/g, ""));
+            var selectWidth = 160;
 
             jQuery(center)
                     .attr({id:'mySelectText' + q})
