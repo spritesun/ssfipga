@@ -13,7 +13,9 @@
   <%= h l(@request.created_at, :format => :long) %>
 </p>
 
-<%= render :partial => 'list', :locals => {:messages => @request.messages, :message => @message } %>
+<div id="messages">
+  <%= render :partial => 'list', :locals => {:messages => @request.messages, :message => @message } %>
+</div>
 
 <h1><%= t :reply_message %></h1>
 <% remote_form_for(@message, :url => { :action => 'reply' }, :html => { :class => 'niceform' }, :update => 'messages') do |f| %>
