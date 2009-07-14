@@ -10,7 +10,7 @@
 
 <p>
   <b>Created at:</b>
-  <%= h @request.created_at.strftime("%Y-%m-%d") %>
+  <%= h l(@request.created_at, :format => :long) %>
 </p>
 
 <%= render :partial => 'list', :locals => {:messages => @request.messages, :message => @message } %>

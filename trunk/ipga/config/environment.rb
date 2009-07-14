@@ -48,15 +48,15 @@ Rails::Initializer.run do |config|
   # The internationalization framework can be changed to have another default locale (standard is :en) or more load paths.
   # All files from config/locales/*.rb,yml are added automatically.
   # config.i18n.load_path << Dir[File.join(RAILS_ROOT, 'my', 'locales', '*.{rb,yml}')]
-  # config.i18n.default_locale = :de
+  config.i18n.default_locale = :zh
 
   # Your secret key for verifying cookie session data integrity.
   # If you change this key, all old sessions will become invalid!
   # Make sure the secret is at least 30 characters and all random, 
   # no regular words or you'll be exposed to dictionary attacks.
   config.action_controller.session = {
-    :session_key => '_ipga_session',
-    :secret      => '9cc714e117153d005fa5fcb679e361754afc5ed36c684f4786fbba80a339d476b88dd45c4c443ce50253a1f91546c654bc5028f846f295defc29e4f14e869c4c'
+          :session_key => '_ipga_session',
+          :secret      => '9cc714e117153d005fa5fcb679e361754afc5ed36c684f4786fbba80a339d476b88dd45c4c443ce50253a1f91546c654bc5028f846f295defc29e4f14e869c4c'
   }
 
   # Use the database for sessions instead of the cookie-based default,
