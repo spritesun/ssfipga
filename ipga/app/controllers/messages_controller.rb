@@ -14,6 +14,4 @@ class MessagesController < ApplicationController
       render_greybox :action => :new
     end
   end
-
-
 end

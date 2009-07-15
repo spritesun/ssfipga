@@ -8,8 +8,8 @@
   </div>
   <% @requests.each do |request| %>
       <div class="listItem" onclick="window.location.href='<%= request_path(request) %>';">
-        <div class="listColumn"><%= h request.sender_friendly_name %></div>
-        <div class="listColumn"><%= h request.receiver_friendly_name %></div>
+        <div class="listColumn"><%= h display_name(request, :sender) %></div>
+        <div class="listColumn"><%= h display_name(request, :receiver) %></div>
         <div class="listColumn"><%= h l(request.created_at, :format => :long) %></div>
         <div class="listColumn"><%= h request.messages.last.title %></div>
         <div class="listColumn"><%= h request.messages.last.body %></div>
