@@ -1,11 +1,11 @@
 <p>
   <b>Sender:</b>
-  <%= h @request.sender_friendly_name %>
+  <%= h display_name(@request, :sender) %>
 </p>
 
 <p>
   <b>Receiver:</b>
-  <%= h @request.receiver_friendly_name %>
+  <%= h display_name(@request, :receiver) %>
 </p>
 
 <p>
