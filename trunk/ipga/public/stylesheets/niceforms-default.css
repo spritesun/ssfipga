@@ -203,6 +203,19 @@ label.chosen {
 }
 
 /*Selects drop-down*/
+.optionsDivVisible {
+    position: absolute;
+    margin-top: -1px;
+    margin-left: 3px;
+    width: 172px;
+    background: #6f7074;
+    padding: 2px;
+    font-size: 11px;
+    z-index: 2;
+    display: none;
+}
+
+/*
 .optionsDivInvisible, .optionsDivVisible {
     position: absolute;
     margin-top: -1px;
@@ -221,6 +234,7 @@ label.chosen {
 .optionsDivVisible {
     display: block;
 }
+*/
 
 .optionsDivVisible p {
     margin: 0;
