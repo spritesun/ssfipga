@@ -441,6 +441,7 @@ jQuery.NiceJForms = {
             }
 
             //create and build div structure
+            var selectDiv = document.createElement('div')
             var selectArea = document.createElement('div');
             var left = document.createElement('div');
             var right = document.createElement('div');
@@ -477,34 +478,39 @@ jQuery.NiceJForms = {
             jQuery(right).addClass("right").append(button);
             jQuery(center).addClass("center").append(text);
 
-            jQuery(selectArea).append(left).append(right).append(center).insertBefore(this);
+            jQuery(selectArea).append(left).append(right).append(center);
+            jQuery(selectDiv)
+                    .css({postion: 'absolute'})
+                    .append(selectArea).insertBefore(this)
+                    .hover(function() {
+            }, function() {
+                $(this).find('.optionsDivVisible').fadeOut('fast');
+            });
+
             //hide the select field
             $(this).hide();
             //insert select div
             //build & place options div
             var optionsDiv = document.createElement('div');
-            var selectAreaPos = jQuery.iUtil.getPosition(selectArea);
+            //var selectAreaPos = jQuery.iUtil.getPosition(selectArea);
 
             jQuery(optionsDiv)
                     .attr({id:"optionsDiv" + q})
                     .css({
-                width : selectWidth + 1 + 'px'
+                width : selectWidth + 21 + 'px'
                 //left  : selectAreaPos.x + 'px',
                 //top   : selectAreaPos.y + jQuery.NiceJForms.options.selectAreaHeight - jQuery.NiceJForms.options.selectAreaOptionsOverlap + 'px'
             })
-                    .addClass("optionsDivInvisible");
+                //.addClass("optionsDivVisible")
+                    .addClass("optionsDivVisible");
 
             $(optionsDiv).insertAfter(selectArea);
             // hide options when mouse out
             $(optionsDiv).hover(function() {
             }, function (event) {
-                $(this).removeClass("optionsDivVisible").addClass("optionsDivInvisible");
+                //$(this).removeClass("optionsDivVisible").addClass("optionsDivInvisible");
+                $(this).fadeOut('fast');
             });
-
-            //$(button).hover(function() {
-            //}, function (event) {
-            //    $(optionsDiv).removeClass("optionsDivVisible").addClass("optionsDivInvisible");
-            //});
 
             //get select's options and add to options div
             $(jQuery.NiceJForms.selects[q]).children().each(function(w) {
@@ -555,7 +561,7 @@ jQuery.NiceJForms = {
 
     showOptions: function(e) {
         var self = this;
-        $("#optionsDiv" + e.data.who).toggleClass("optionsDivVisible").toggleClass("optionsDivInvisible").mouseout(function(e) {
+        $("#optionsDiv" + e.data.who).fadeToggle('fast').mouseout(function(e) {
             self.hideOptions(e)
         });
     },
