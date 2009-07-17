@@ -31,11 +31,4 @@ module ApplicationHelper
     ).flatten!
     javascript_include_tag(*sources)
   end
-
-  ActionView::Helpers::FormBuilder.class_eval do
-    def label_t(method, text = nil, options = {})
-      text ||= t(method)
-      label method, text, options
-    end
-  end
 end

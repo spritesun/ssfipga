@@ -114,7 +114,7 @@ zh:
         confirmation: "与确认值不匹配"
         accepted: "必须是可被接受的"
         empty: "不能留空"
-        blank: "不能为空字符"
+        blank: "不能为空"
         too_long: "过长（最长为 {{count}} 个字符）"
         too_short: "过短（最短为 {{count}} 个字符）"
         wrong_length: "长度非法（必须为 {{count}} 个字符）"
@@ -137,7 +137,8 @@ zh:
         level: "级别"
         official_grade: "行政级别"
         industry: "行业"
-
+        description: "详细内容"
+  
   navigation:
     home: 首页
     inbox: 收件箱
@@ -152,3 +153,5 @@ zh:
     body: 正文
   send_request_message: 发送请求消息
   reply_message: 回复消息
+  save: 保存
+  new_resource: 添加新的资源
