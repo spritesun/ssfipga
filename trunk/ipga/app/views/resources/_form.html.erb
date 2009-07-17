@@ -1,43 +1,44 @@
-<% form_for(record, :html => { :class => 'niceform' }) do |f| %>
-    <%= f.error_messages %>
+<% I18n.with_options :scope => [:activerecord, :attributes, :resource] do |locale| %>
+    <% form_for(record, :html => { :class => 'niceform' }) do |f| %>
+        <%= f.error_messages %>
 
-    <p>
-      <%= f.label :location_id %><br/>
-      <%= f.reference_data_collection_select :location %>
-    </p>
+        <p>
+          <%= f.label :location_id, locale.t(:location) %><br/>
+          <%= f.reference_data_collection_select :location %>
+        </p>
 
-    <p>
-      <%= f.label :industry_id %><br/>
-      <%= f.reference_data_collection_select :industry %>
-    </p>
+        <p>
+          <%= f.label :industry_id, locale.t(:industry) %><br/>
+          <%= f.reference_data_collection_select :industry %>
+        </p>
 
-    <p>
-      <%= f.label :level_id %><br/>
-      <%= f.reference_data_collection_select :level %>
-    </p>
+        <p>
+          <%= f.label :level_id, locale.t(:level) %><br/>
+          <%= f.reference_data_collection_select :level %>
+        </p>
 
-    <p>
-      <%= f.label :official_grade_id %><br/>
-      <%= f.reference_data_collection_select :official_grade %>
-    </p>
+        <p>
+          <%= f.label :official_grade_id, locale.t(:official_grade) %><br/>
+          <%= f.reference_data_collection_select :official_grade %>
+        </p>
 
-    <p>
-      <%= f.label :department_id %><br/>
-      <%= f.reference_data_collection_select :department %>
-    </p>
+        <p>
+          <%= f.label :department_id, locale.t(:department) %><br/>
+          <%= f.reference_data_collection_select :department %>
+        </p>
 
-    <p>
-      <%= f.label :strength_id %><br/>
-      <%= f.reference_data_collection_select :strength, :text_method => :rank %>
-    </p>
+        <p>
+          <%= f.label :strength_id, locale.t(:strength) %><br/>
+          <%= f.reference_data_collection_select :strength, :text_method => :rank %>
+        </p>
 
-    <p>
-      <%= f.label :description %><br/>
-      <%= f.text_area :description, :rows => 8 %>
-    </p>
-    <p>
-      <%= f.submit "Save" %>
-    </p>
+        <p>
+          <%= f.label :description, locale.t(:description) %><br/>
+          <%= f.text_area :description, :rows => 8 %>
+        </p>
+        <p>
+          <%= f.submit t(:save) %>
+        </p>
+    <% end %>
 <% end %>
-
 <%= javascript_include_tag "rate" %>

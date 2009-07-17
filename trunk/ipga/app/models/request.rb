@@ -16,7 +16,7 @@ class Request < ActiveRecord::Base
   private
 
   def ensure_sender_receiver_difference
-    errors.add("sender", t(:can_not_request_self)) if sender.id == receiver.id
+    errors.add("sender", I18n.t(:can_not_request_self)) if sender.id == receiver.id
   end
 
   def set_participator_name
