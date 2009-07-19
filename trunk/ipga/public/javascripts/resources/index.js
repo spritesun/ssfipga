@@ -28,7 +28,6 @@ var searchCallback = function() {
         setTimeout(function() {
             $.unblockUI({
                 onUnblock: function () {
-                    //$('<li/>').text('new item').appendTo($('#shopCart ul')).effect("highlight", {}, 3000);
                     add_to_cart($item);
                 }
             });

@@ -7,6 +7,10 @@ module DataLoader
 
   private
 
+  def create_favorites
+    User.all.each { |user| user.create_favorite unless user.favorite }
+  end
+
   def create_resources
     Resource.destroy_all
     10.times do

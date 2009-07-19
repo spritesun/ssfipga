@@ -69,7 +69,7 @@
 
             <p id="cartTooltip">drag resources here.</p>
             <ul>
-
+              <%= render :partial => 'shared/favorite', :locals => {:favorite => (current_user.favorite if logged_in?) } %>
             </ul>
           </div>
         </div>
