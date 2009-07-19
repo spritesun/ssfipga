@@ -1,0 +1,10 @@
+<% favorite.resources.each do |resource| %>
+    <li>
+      <div><%= resource.location.name %></div>
+      <div><%= resource.industry.name %></div>
+      <div><%= resource.level.name %></div>
+      <div><%= resource.official_grade.name %></div>
+      <div><%= resource.department.name %></div>
+      <div><%= resource.created_at.strftime("%Y-%m-%d") %></div>
+    </li>
+<% end %>
