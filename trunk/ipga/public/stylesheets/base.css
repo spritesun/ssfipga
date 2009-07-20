@@ -370,6 +370,12 @@ a.linkButton:active span {
     padding: 5px 10px;
     margin: 5px 0px;
     background-color: #f5f5f5;
+    position: relative;
+}
+#shopCart ul li a {
+    position: absolute;
+    top: 5px;
+    right: 10px;
 }
 
 /*end: #col3*/
