@@ -6,5 +6,6 @@
       <div><%= resource.official_grade.name %></div>
       <div><%= resource.department.name %></div>
       <div><%= resource.created_at.strftime("%Y-%m-%d") %></div>
+      <%= link_to_remote '[X]', :url => favorites_resource_path(resource.id), :method => :delete, :update => 'favorite', :html => {:title => 'remove'} %>
     </li>
 <% end %>
