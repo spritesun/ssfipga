@@ -10,33 +10,7 @@ var searchCallback = function() {
         return GB_showCenter('send request', this.href)
     });
 
-    // click button, add to cart
-    $('.cartAdd').click(function() {
-        var $item = $(this).parent().parent();
-        $.blockUI({
-            message: $('<h1>adding a new item</h1>'),
-            css: {
-                border: 'none',
-                padding: '0px',
-                backgroundColor: '#000',
-                '-webkit-border-radius': '10px',
-                '-moz-border-radius': '10px',
-                opacity: .5,
-                color: '#fff'
-            }
-        });
-        setTimeout(function() {
-            $.unblockUI({
-                onUnblock: function () {
-                    add_to_cart($item);
-                }
-            });
-        }, 500);
-
-        return false;
-    });
-
-    // drag to cart
+    // drag to cart, creat a new div to show as a ghost helper
     $(".listItem").draggable({
         helper: function() {
             var $newDiv = $('<div class="onDragging" />');
@@ -45,6 +19,7 @@ var searchCallback = function() {
             $.each(strArray, function(index, value) {
                 $('<div/>').text($this.find(value).text()).appendTo($newDiv);
             });
+            $this.find('.listTools .cartAdd').clone().hide().appendTo($newDiv);
             return $newDiv[0];
         },
         zIndex:'10',
@@ -58,14 +33,19 @@ var searchCallback = function() {
     });
 }
 
-$(document).ready(function() {
+// add_to_cart ajax request seccess callback
+var add_to_cart_seccess = function() {
+    $('#favorite li:last').highlight();
+}
 
+$(document).ready(function() {
     $("#col3").droppable({
         accept: ".listItem",
         activeClass: 'droppable-active',
         hoverClass: 'droppable-hover',
         drop: function(ev, ui) {
-            add_to_cart(ui.draggable);
+            // trigger click event of .cartAdd link_for_remote to post ajax request
+            ui.draggable.find('.cartAdd').click();
         }
     });
 
@@ -77,14 +57,6 @@ $(document).ready(function() {
     });
 });
 
-var add_to_cart = function(draggable) {
-    var $newLi = $('<li/>');
-    var strArray = ['.location', '.industry', '.level', '.official_grade', '.department', '.create_at'];
-    $.each(strArray, function(index, value) {
-        $('<div/>').text(draggable.find(value).text()).appendTo($newLi);
-    });
-    $newLi.appendTo($('#shopCart ul')).effect("highlight", {}, 3000);
-};
 //****** end: search
 
 // 导航块 navigation
