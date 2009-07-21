@@ -1,1 +1,4 @@
+<%= link_to_span 'New resource', new_resource_path, :class => 'linkButton' %>
+<%= link_to_span '修改密码', '#', :class => 'linkButton' %>
+<div style="clear:both;"></div>
 <%= render :partial => 'list', :locals => {:resources => current_user.resources, :is_mine => true} %>
