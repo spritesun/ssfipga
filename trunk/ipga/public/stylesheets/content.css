@@ -8,6 +8,10 @@
     font-family: Arial, sans-serif;
 }
 
+#content .topDiv {
+    margin-bottom: 10px;
+}
+
 /*begin: list*/
 #content div.list {
     width: 580px;

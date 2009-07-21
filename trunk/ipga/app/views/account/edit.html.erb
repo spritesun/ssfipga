@@ -1,0 +1,18 @@
+<h1>Changing password</h1>
+
+<% form_for(current_user, :url => { :action => "update" }, :html => { :class => 'niceform' }) do |f| %>
+    <%= f.error_messages %>
+    <p>
+      <%= f.label :password %><br/>
+      <%= f.password_field :password %>
+    </p>
+    <p>
+      <%= f.label :password_confirmation %><br/>
+      <%= f.password_field :password_confirmation %>
+    </p>
+    <p>
+      <%= f.submit "Submit" %>
+    </p>
+<% end %>
+
+<%= link_to_span 'Back', mine_resources_path, :class => 'linkButton' %>

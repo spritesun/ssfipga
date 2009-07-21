@@ -24,4 +24,19 @@ class AccountController < ApplicationController
     flash[:notice] = "You have been logged out."
     redirect_back_or_default(:controller => 'account', :action => 'index')
   end
+
+  # GET /resources/1/edit
+  def edit
+  end
+
+  # PUT /resources/1
+  def update
+    if current_user.update_attributes(params[:user])
+      flash[:notice] = '密码成功更新.'
+      redirect_to(mine_resources_path)
+    else
+      render :action => "edit"
+    end
+  end
+
 end
