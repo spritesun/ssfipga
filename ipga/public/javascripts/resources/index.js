@@ -28,9 +28,7 @@ var searchCallback = function() {
         cursorAt: { top: 20, left: 20 }
     });
 
-    $('.listTools a').click(function(event) {
-        event.stopPropagation();
-    });
+    
 }
 
 // add_to_cart ajax request seccess callback

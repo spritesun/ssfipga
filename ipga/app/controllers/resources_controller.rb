@@ -1,9 +1,4 @@
 class ResourcesController < ApplicationController
-  # GET /resources
-  def index
-    @resources = Resource.find(:all)
-  end
-
   # GET /resources/1
   def show
     @resource = Resource.find(params[:id])
@@ -36,7 +31,7 @@ class ResourcesController < ApplicationController
     @resource = Resource.find(params[:id])
 
     if @resource.update_attributes(params[:resource])
-      flash[:notice] = 'Resource was successfully updated.'
+      flash[:notice] = '资源成功更新.'
       redirect_to(@resource)
     else
       render :action => "edit"
@@ -47,8 +42,8 @@ class ResourcesController < ApplicationController
   def destroy
     @resource = Resource.find(params[:id])
     @resource.destroy
-
-    redirect_to(resources_url)
+    flash[:notice] = '资源已被删除.'
+    redirect_to(mine_resources_path)
   end
 
   # GET /resources/search
@@ -63,9 +58,5 @@ class ResourcesController < ApplicationController
     else
       render :partial => 'list', :locals => {:resources => @results, :is_mine => false}
     end
-  end
-
-  def mine
-    @resources = current_user.resources
-  end
+  end 
 end

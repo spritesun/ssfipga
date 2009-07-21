@@ -38,5 +38,8 @@
         });
         // 斑马线
         $('#content .listItem:even').css('background-color', '#F5F5F5');
+        $('.listTools a').click(function(event) {
+            event.stopPropagation();
+        });
     });
 </script>
