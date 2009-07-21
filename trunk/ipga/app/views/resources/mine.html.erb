@@ -1,1 +1,1 @@
-<%= render :partial => 'list', :locals => {:resources => @resources, :is_mine => true} %>
+<%= render :partial => 'list', :locals => {:resources => current_user.resources, :is_mine => true} %>
