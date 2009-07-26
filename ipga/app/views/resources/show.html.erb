@@ -40,5 +40,14 @@
 </p>
 
 
-<%= link_to_span 'Edit', edit_resource_path(@resource), :class => 'linkButton' %>
+<%= (link_to_span 'Edit', edit_resource_path(@resource), :class => 'linkButton') if @is_mine %>
+<%= (link_to_remote_span("Add to cart", :url => { :controller => "favorites_resources", :action => "create", :resource_id => @resource.id }, :html => { :class => 'linkButton', :title => 'Add to cart' }, :update => 'favorite', :success => 'add_to_cart_seccess();')) unless @is_mine %>
+<%= (link_to_span "Request", new_message_path(:resource_id => @resource.id), :class => "linkButton request", :title => "Request") unless @is_mine %>
 <%= link_to_span 'Back', resources_path, :class => 'linkButton' %>
+
+<script type=text/javascript>
+    // set request button
+    $('.request').click(function() {
+        return GB_showCenter('Send request', this.href)
+    });
+</script>

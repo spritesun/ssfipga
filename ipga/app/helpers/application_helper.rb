@@ -22,6 +22,10 @@ module ApplicationHelper
     "<a #{href_attr}#{tag_options}><span>#{name || url}</span></a>"
   end
 
+  def link_to_remote_span(name, options = {}, html_options = nil)
+    link_to_remote("<span>" + name + "</span>", options, html_options)
+  end
+
   def javascript_dir_include_tag(*sources)
     dir_name = sources.shift
     sources.unshift(

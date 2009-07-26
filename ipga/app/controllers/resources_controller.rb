@@ -2,6 +2,7 @@ class ResourcesController < ApplicationController
   # GET /resources/1
   def show
     @resource = Resource.find(params[:id])
+    @is_mine = @resource.owner_id == current_user.id
   end
 
   # GET /resources/new
@@ -58,5 +59,5 @@ class ResourcesController < ApplicationController
     else
       render :partial => 'list', :locals => {:resources => @results, :is_mine => false}
     end
-  end 
+  end
 end

@@ -7,4 +7,8 @@
     $(document).ready(function() {
         $.NiceJForms.build();
     });
+    // add_to_cart ajax request seccess callback
+    var add_to_cart_seccess = function() {
+        $('#favorite li:last').highlight();
+    }
 </script>
