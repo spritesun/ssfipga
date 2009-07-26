@@ -7,7 +7,7 @@ var searchCallback = function() {
 
     // set request button
     $('.request').click(function() {
-        return GB_showCenter('send request', this.href)
+        return GB_showCenter('Send request', this.href)
     });
 
     // drag to cart, creat a new div to show as a ghost helper
@@ -27,13 +27,6 @@ var searchCallback = function() {
         cursor: 'move',
         cursorAt: { top: 20, left: 20 }
     });
-
-    
-}
-
-// add_to_cart ajax request seccess callback
-var add_to_cart_seccess = function() {
-    $('#favorite li:last').highlight();
 }
 
 $(document).ready(function() {

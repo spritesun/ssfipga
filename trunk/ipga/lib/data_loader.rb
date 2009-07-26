@@ -3,6 +3,7 @@ module DataLoader
     @fixtures = {}
     create_resources
     create_request
+    create_messages
   end
 
   private
@@ -20,6 +21,10 @@ module DataLoader
 
   def create_request
     Request.destroy_all
+  end
+
+  def create_messages
+    Message.destroy_all
   end
 
   def rand_attrs(*attrs)
