@@ -6,7 +6,7 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.new(:request => Request.new(:resource => Resource.find(params[:resource_id]), :sender => current_user))
+    @message = Message.new(:request => Request.new(:resource => Resource.find(params[:resource_id]), :sender => current_user), :sender => current_user)
     @message.attributes = params[:message]
     if @message.save
       render :text => '发送成功'

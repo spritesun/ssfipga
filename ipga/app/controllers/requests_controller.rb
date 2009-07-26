@@ -12,6 +12,7 @@ class RequestsController < ApplicationController
 
   def reply
     @message = Message.new(params[:message])
+    @message.sender = current_user
     if @message.save
       render :partial => 'list', :locals => {:messages => @message.request.messages}
     else
