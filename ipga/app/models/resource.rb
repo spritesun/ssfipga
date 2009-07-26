@@ -9,7 +9,7 @@ class Resource < ActiveRecord::Base
 
   validates_presence_of :location, :strength, :department, :level, :official_grade, :industry
 
-  has_many :requests
+  has_many :requests, :dependent => :destroy
 
   validates_presence_of :owner
 end
