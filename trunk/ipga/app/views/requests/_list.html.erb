@@ -3,6 +3,7 @@
 <% else %>
     <% messages.each do |message| %>
         <div>
+          <div><b>Sender: </b><span><%= h display_name_by_id(message.request, message.sender_id) %></span></div>
           <div><b>Title: </b><span><%= h message.title %></span></div>
           <div><b>Body: </b><span><%= h message.body %></span></div>
         </div>

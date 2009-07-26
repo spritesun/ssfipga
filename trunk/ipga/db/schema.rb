@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090719064840) do
+ActiveRecord::Schema.define(:version => 20090726135036) do
 
   create_table "departments", :force => true do |t|
     t.string "name"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(:version => 20090719064840) do
     t.string  "title"
     t.text    "body"
     t.integer "request_id"
+    t.integer "sender_id"
   end
 
   create_table "official_grades", :force => true do |t|
