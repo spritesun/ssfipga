@@ -15,6 +15,9 @@ test:
   <<: *defaults
 
 production:
-  database: <%= database_name %>_production
-  <<: *defaults
+  database: ipga
+  adapter: mysql
+  username: ipga
+  password: Advantage2009
+  host: ipga.db.4481230.hostedresource.com
 
