@@ -14,7 +14,7 @@ class RequestsController < ApplicationController
     @message = Message.new(params[:message])
     @message.sender = current_user
     if @message.save
-      render :partial => 'list', :locals => {:messages => @message.request.messages}
+      render :partial => 'list', :locals => {:messages => @message.request.messages.sort_by(&:created_at).reverse}
     else
       render :text => '回复失败'
     end

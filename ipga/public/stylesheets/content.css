@@ -8,6 +8,17 @@
     font-family: Arial, sans-serif;
 }
 
+#content h3 {
+    font-size: 150%;
+    font-weight: normal;
+    margin: 0;
+    padding: 10px 0 10px;
+}
+
+#content:first-child {
+    padding-top: 0px;
+}
+
 #content .topDiv {
     margin-bottom: 10px;
 }
@@ -272,35 +283,76 @@
 
 /*end: #requestOverlay*/
 /*begin: messages*/
-#messages {
-    margin: 15px 0px;
+#messagesTitle {
+    background: transparent url(../images/messages-top.gif) no-repeat scroll left bottom;
+
 }
 
-#messages > div {
-    border-bottom: 1px dashed #5C87B2;
-    line-height: 1.1em;
-    padding: 0.7em 0 0.6em;
-    width: 80%;
+#messagesWrap {
+    background: transparent url(../images/messages-bottom.gif) no-repeat scroll left bottom;
+    padding-bottom: 5px;
+    width: 504px;
 }
 
-#messages > div:hover {
-    background-color: #F7F7F7;
+#messagesWrap ul {
+    background: transparent url(../images/messages-body-bg.gif) repeat-y scroll 0 0;
+    line-height: 160%;
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+    margin: 0;
+    padding: 10px 13px 0;
 }
 
-#messages > div:first-child {
-    border-top: 1px dashed #5C87B2;
+#messagesWrap ul li {
+    background-image: none;
+    clear: both;
+    margin: 0;
+    min-height: 70px;
+    overflow: hidden;
+    padding: 0;
 }
 
-#messages > div > div {
-    padding: 2px 0px 2px 10px;
+#messages .sender {
+    background: transparent url(../images/messages-avatar-bg.gif) no-repeat scroll 0 0;
+    float: left;
+    height: 56px;
+    margin-top: 5px;
+    padding: 16px 0 0 8px;
+    width: 56px;
 }
 
-#messages > div b {
-    margin-right: 5px;
+#messages .title {
+    background: transparent url(../images/messages-entry-top.gif) no-repeat scroll 0 0;
+    float: right;
+    margin: 0;
+    padding: 7px 15px 2px;
+    position: relative;
+    width: 380px;
+    font-size: 110%;
+    font-style: normal;
+    font-weight: bold;
 }
 
-#messages > div span {
-    font-style: italic;
+#messages .body {
+    background: transparent url(../images/messages-entry-middle.gif) repeat-y scroll 0 0;
+    float: right;
+    margin: 0;
+    padding: 5px 15px 2px;
+    position: relative;
+    width: 380px;
+}
+
+#messages .sendTime {
+    background: transparent url(../images/messages-entry-bottom.gif) no-repeat scroll 0 0;
+    color: #777777;
+    float: right;
+    font-size: 85%;
+    margin: 0 0 10px;
+    padding: 7px 5px 0 0;
+    position: relative;
+    text-align: right;
+    width: 405px;
 }
 
 /*end: messages*/
