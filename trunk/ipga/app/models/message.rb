@@ -8,4 +8,8 @@ class Message < ActiveRecord::Base
   def resource
     request.resource
   end
+
+  def body_preview
+    body[0, 18] << '...'
+  end
 end

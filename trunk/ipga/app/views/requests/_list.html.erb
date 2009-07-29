@@ -1,11 +1,17 @@
 <% if messages.blank? %>
     <%= t('no_message') %>
 <% else %>
-    <% messages.each do |message| %>
-        <div>
-          <div><b>Sender: </b><span><%= h display_name_by_id(message.request, message.sender_id) %></span></div>
-          <div><b>Title: </b><span><%= h message.title %></span></div>
-          <div><b>Body: </b><span><%= h message.body %></span></div>
-        </div>
-    <% end %>
+    <h3 id="messagesTitle">Messages</h3>
+    <div id="messagesWrap">
+      <ul>
+        <% messages.each do |message| %>
+            <li class="messageItem">
+              <div class="sender"><%= h display_name_by_id(message.request, message.sender_id) %></div>
+              <div class="title"><%= h message.title %></div>
+              <div class="body"><%= h message.body %></div>
+              <div class="sendTime"><span><%= h l(message.created_at, :format => :long) %></span></div>
+            </li>
+        <% end %>
+      </ul>
+    </div>
 <% end %>
