@@ -37,12 +37,4 @@ describe ResourcesController do
     end
   end
 
-  describe 'GET mine' do
-    it 'list resources related to current user' do
-      get :mine
-      assigns[:resources].each do |resource|
-        resource.owner.should == current_user
-      end
-    end
-  end
 end
