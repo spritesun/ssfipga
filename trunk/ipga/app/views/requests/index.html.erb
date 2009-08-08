@@ -11,8 +11,8 @@
         <div class="listColumn"><%= h display_name(request, :sender) %></div>
         <div class="listColumn"><%= h display_name(request, :receiver) %></div>
         <div class="listColumn"><%= h l(request.created_at, :format => :short) %></div>
-        <div class="listColumn <%= "unread" if request.has_unread? %>"><%= h request.messages.last.title %></div>
-        <div class="listColumnLast <%= "unread" if request.has_unread? %>"><%= h request.messages.last.body_preview %></div>
+        <div class="listColumn <%= display_unread_request request %>"><%= h request.messages.last.title %></div>
+        <div class="listColumnLast <%= display_unread_request request %>"><%= h request.messages.last.body_preview %></div>
       </div>
   <% end %>
 </div>
