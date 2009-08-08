@@ -13,6 +13,14 @@ class Request < ActiveRecord::Base
     resource.owner
   end
 
+  def has_unread?
+    messages.reject { |message| message.readed? }.length > 0
+  end
+
+  def read_all
+    messages.each { |message| message.update_attributes({:readed => true}) }
+  end
+
   private
 
   def ensure_sender_receiver_difference
