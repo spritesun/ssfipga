@@ -44,7 +44,7 @@
           <div id="inbox">
             <p class="blockHeader">Inbox</p>
 
-            <p><%= link_to "unread message: " + current_user.unread_messages.length.to_s, requests_path %></p>
+            <p><%= (link_to "unread message: " + current_user.unread_messages.length.to_s, requests_path) if logged_in? %></p>
           </div>
         </div>
       </div>
