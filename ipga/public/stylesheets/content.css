@@ -58,6 +58,16 @@
     text-align: center;
 }
 
+#content .listColumnLast {
+    float: left;
+    width: 200px;
+    text-align: left;
+}
+
+#content .listItem .unread {
+    font-weight: bold;
+}
+
 #content .listItem {
     height: 55px;
     line-height: 2em;
@@ -285,7 +295,6 @@
 /*begin: messages*/
 #messagesTitle {
     background: transparent url(../images/messages-top.gif) no-repeat scroll left bottom;
-
 }
 
 #messagesWrap {
@@ -331,7 +340,6 @@
     width: 380px;
     font-size: 110%;
     font-style: normal;
-    font-weight: bold;
 }
 
 #messages .body {
@@ -353,6 +361,10 @@
     position: relative;
     text-align: right;
     width: 405px;
+}
+
+#messages .unread {
+    font-weight: bold;
 }
 
 /*end: messages*/

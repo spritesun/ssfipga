@@ -7,6 +7,7 @@ class RequestsController < ApplicationController
   # GET /requests/1
   def show
     @request = Request.find(params[:id])
+    @request.read_all
     @message = Message.new(:request => @request)
   end
 

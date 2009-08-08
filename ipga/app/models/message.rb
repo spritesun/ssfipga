@@ -10,6 +10,6 @@ class Message < ActiveRecord::Base
   end
 
   def body_preview
-    body[0, 18] << '...'
+    body[0, 42] << '...'
   end
 end
