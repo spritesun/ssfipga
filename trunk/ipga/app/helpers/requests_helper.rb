@@ -10,16 +10,11 @@ module RequestsHelper
   end
 
   def display_unread_request(request)
-    "unread" if request.messages.reject { |message| !am_i_unread?(message) }.length > 0
+    "unread" if request.messages.reject { |message| current_user.has_read? message }.length > 0
   end
 
   def display_unread_message(message)
-    "unread" if am_i_unread? message
+    "unread" if !current_user.has_read? message, true
   end
 
-  private
-
-  def am_i_unread?(message)
-    !message.readed? && message.sender != current_user
-  end
 end

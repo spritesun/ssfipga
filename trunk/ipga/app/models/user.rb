@@ -36,6 +36,10 @@ class User < ActiveRecord::Base
     received_messages.reject { |message| message.readed? }
   end
 
+  def has_read?(message, for_ui = false)
+    (for_ui ? message.readed_for_ui? : message.readed?) || message.sender == self
+  end
+
   # Authenticates a user by their login name and unencrypted password.  Returns the user or nil.
   def self.authenticate(username, password)
     u = find_by_username(username) # need to get the salt
