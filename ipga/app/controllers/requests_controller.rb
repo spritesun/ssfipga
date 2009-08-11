@@ -7,6 +7,7 @@ class RequestsController < ApplicationController
   # GET /requests/1
   def show
     @request = Request.find(params[:id])
+    @request.messages.each { |message| message.copy_readed }
     current_user.read @request
     @message = Message.new(:request => @request)
   end

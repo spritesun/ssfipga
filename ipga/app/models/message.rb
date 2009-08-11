@@ -8,12 +8,22 @@ class Message < ActiveRecord::Base
 
   before_create :set_receiver
 
+  #attr_accessor :readed_for_ui
+
   def resource
     request.resource
   end
 
   def body_preview
     body[0, 42] << '...'
+  end
+
+  def copy_readed
+    @readed_for_ui = readed?
+  end
+
+  def readed_for_ui?
+    @readed_for_ui == nil ? true : @readed_for_ui
   end
 
   private
