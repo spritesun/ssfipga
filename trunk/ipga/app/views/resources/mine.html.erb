@@ -3,4 +3,10 @@
   <%= link_to_span '修改密码', {:controller => 'account', :action => 'edit'}, :class => 'linkButton' %>
   <div style="clear:both;"></div>
 </div>
-<%= render :partial => 'list', :locals => {:resources => current_user.resources, :is_mine => true} %>
+<%= render :partial => 'list', :locals => {:resources => @resources, :is_mine => true} %>
+<div class="digg_pagination">
+  <div clas="page_info">
+    <%= page_entries_info @resources %>
+  </div>
+  <%= will_paginate @resources, :container => false %>
+</div>
