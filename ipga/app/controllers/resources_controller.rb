@@ -60,4 +60,8 @@ class ResourcesController < ApplicationController
       render :partial => 'list', :locals => {:resources => @results, :is_mine => false}
     end
   end
+
+  def mine
+    @resources = Resource.paginate_by_owner_id current_user.id, :page => params[:page], :order => 'created_at DESC', :per_page => 5
+  end
 end
