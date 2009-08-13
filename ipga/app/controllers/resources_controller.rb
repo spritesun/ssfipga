@@ -51,9 +51,10 @@ class ResourcesController < ApplicationController
   def search
     render :text => '请输入查询条件' and return if params[:keyword].blank?
     name = "#{I18n.locale}_name"
-    @results = Resource.all(:include => [:location, :industry, :department, :level, :official_grade],
-                            :conditions => ["owner_id != :self_id AND (locations.#{name} like :k OR industries.name like :k OR departments.name like :k OR
-                            levels.name like :k OR official_grades.name like :k)", {:self_id => current_user.id, :k => "%#{params[:keyword]}%"}])
+    @results = Resource.paginate :page => params[:page], :order => 'created_at DESC', :per_page => 5,
+                                 :include => [:location, :industry, :department, :level, :official_grade],
+                                 :conditions => ["owner_id != :self_id AND (locations.#{name} like :k OR industries.name like :k OR departments.name like :k OR
+                                 levels.name like :k OR official_grades.name like :k)", {:self_id => current_user.id, :k => "%#{params[:keyword]}%"}]
     if @results.blank?
       render :text => '找不到您要的结果'
     else

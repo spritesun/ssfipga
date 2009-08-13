@@ -29,6 +29,13 @@
       <% end %>
     </div>
 <% end %>
+<div class="digg_pagination">
+  <div clas="page_info">
+    <%= page_entries_info resources %>
+  </div>
+  <%= will_paginate resources, :container => false, :renderer => "RemoteLinkRenderer", :remote => {:update => 'results'} unless is_mine %>
+  <%= will_paginate resources, :container => false if is_mine %>
+</div>
 
 <script type="text/javascript">
     $(document).ready(function() {

@@ -4,9 +4,3 @@
   <div style="clear:both;"></div>
 </div>
 <%= render :partial => 'list', :locals => {:resources => @resources, :is_mine => true} %>
-<div class="digg_pagination">
-  <div clas="page_info">
-    <%= page_entries_info @resources %>
-  </div>
-  <%= will_paginate @resources, :container => false %>
-</div>
