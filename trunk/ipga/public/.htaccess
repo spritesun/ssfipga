@@ -1,0 +1,9 @@
+Options +FollowSymLinks
+Options +ExecCGI
+RewriteEngine On
+RewriteBase /
+RewriteRule ^stylesheets/(.*)$ stylesheets/$1 [L]
+RewriteRule ^javascripts/(.*)$ javascripts/$1 [L]
+RewriteRule ^greybox/(.*)$ greybox/$1 [L]
+RewriteRule ^images/(.*)$ images/$1 [L]
+RewriteRule ^(.*)$ dispatch.fcgi [QSA,L]
