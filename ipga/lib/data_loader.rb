@@ -14,7 +14,7 @@ module DataLoader
 
   def create_resources
     Resource.destroy_all
-    10.times do
+    27.times do
       Resource.create!(rand_attrs(:location, :department, :industry, :level, :official_grade, :strength, :owner => :user))
     end
   end
